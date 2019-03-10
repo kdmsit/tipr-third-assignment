@@ -71,8 +71,8 @@ if __name__ == '__main__':
 
 
     kind = 'train'
-    labels_path = os.path.join(path, '%s-labels-idx1-ubyte.gz' % kind)
-    images_path = os.path.join(path, '%s-images-idx3-ubyte.gz' % kind)
+    labels_path = os.path.join(inputDataPath, '%s-labels-idx1-ubyte.gz' % kind)
+    images_path = os.path.join(inputDataPath, '%s-images-idx3-ubyte.gz' % kind)
     with gzip.open(labels_path, 'rb') as lbpath:
         labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
 
