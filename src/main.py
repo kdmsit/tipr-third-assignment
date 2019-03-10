@@ -83,7 +83,7 @@ if __name__ == '__main__':
     labels = pd.DataFrame(labels)
     trainData = (images)
     Label = (labels)
-    print(len(len(Label)))
+    print(len(Label))
     trainLabel=[]
     for i in range(0,len(Label)):
         label=Label[i][0]
