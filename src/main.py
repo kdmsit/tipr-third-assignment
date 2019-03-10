@@ -82,15 +82,15 @@ if __name__ == '__main__':
         buf = f.read(1 * 32)
         labels = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
         Label.append(labels)
-    print(Label)
+    #print(Label)
     trainLabel=[]
     for label in Label:
         l=np.zeros((1,10))
         l[label]=1
         trainLabel.append(l)
-    print(trainLabel)
-    #print(np.shape(trainData))
-    #print(np.shape(trainLabel))
+    #print(trainLabel)
+    print(np.array(trainData).shape)
+    print(np.array(trainLabel).shape)
     # endregion
 
     '''(trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
