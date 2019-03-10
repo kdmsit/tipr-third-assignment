@@ -191,7 +191,7 @@ if __name__ == '__main__':
             for batch in range(0, int(len(trainLabel) / batch_size)):
                 batchendIndex = batchstartIndex + batch_size
                 x_batch=trainData[batchstartIndex:batchendIndex]
-                y_true_batch=trainLabel
+                y_true_batch=trainLabel[batchstartIndex:batchendIndex]
                 batchstartIndex=batchendIndex
                 # Get a batch of images and labels
                 #x_batch, y_true_batch = data.train.next_batch(batch_size)
