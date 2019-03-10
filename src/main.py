@@ -58,7 +58,7 @@ def new_fc_layer(input, num_inputs, num_outputs, name):
 
 if __name__ == '__main__':
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
-    inputDataPath = "../data"
+    inputDataPath = "../data/Fashion-MNIST"
     outputDataPath = "/output"
     trainData=[]
     Label=[]
@@ -69,10 +69,10 @@ if __name__ == '__main__':
     print("- Test-set:\t\t{}".format(len(data.test.labels)))
     print("- Validation-set:\t{}".format(len(data.validation.labels)))'''
 
-    path1 = "C:\\Users\\Paarth\\Desktop\\tipr-third-assignment-master\\data\\Fashion-MNIST"
+
     kind = 'train'
-    labels_path = os.path.join(path1, '%s-labels-idx1-ubyte.gz' % kind)
-    images_path = os.path.join(path1, '%s-images-idx3-ubyte.gz' % kind)
+    labels_path = os.path.join(path, '%s-labels-idx1-ubyte.gz' % kind)
+    images_path = os.path.join(path, '%s-images-idx3-ubyte.gz' % kind)
     with gzip.open(labels_path, 'rb') as lbpath:
         labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
 
