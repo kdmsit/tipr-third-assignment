@@ -88,7 +88,9 @@ if __name__ == '__main__':
         label=Label[i][0]
         print(label)
         l = [0 for i in range(10)]
+        print(l)
         l[label] = 1
+        print(l)
         trainLabel.append(l)
 
     print(np.array(trainData).shape)
