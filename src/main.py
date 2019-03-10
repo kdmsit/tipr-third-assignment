@@ -82,9 +82,9 @@ if __name__ == '__main__':
         buf = f.read(1 * 32)
         labels = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
         trainLabel.append(labels)
+    trainLabel=tf.one_hot(trainLabel,10)
     print(np.shape(trainData))
     print(np.shape(trainLabel))
-    trainLabel=tf.one_hot(trainLabel,10)
     # endregion
 
     (trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
