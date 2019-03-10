@@ -82,7 +82,7 @@ if __name__ == '__main__':
     images = pd.DataFrame(images)
     labels = pd.DataFrame(labels)
     trainData = (images)
-    Label = (labels)
+    Label = np.array(labels)
     print(Label)
     trainLabel=[]
     for i in range(len(Label)):
