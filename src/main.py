@@ -55,7 +55,7 @@ def new_fc_layer(input, num_inputs, num_outputs, name):
 
 if __name__ == '__main__':
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
-    inputDataPath = "/data"
+    inputDataPath = "../data"
     outputDataPath = "/output"
     trainData=[]
     trainLabel=[]
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     print("- Validation-set:\t{}".format(len(data.validation.labels)))'''
 
     # region Fashion-MNIST
-    f = gzip.open(path + inputDataPath + '/Fashion-MNIST/train-images-idx3-ubyte.gz', 'r')
+    f = gzip.open(inputDataPath + '/Fashion-MNIST/train-images-idx3-ubyte.gz', 'r')
     image_size = 28
     num_images = 1000
     buf = f.read(image_size * image_size * num_images)
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     trainData = trainData.reshape(num_images, np.square(image_size))
     #print(trainData)
 
-    f = gzip.open(path + inputDataPath + '/Fashion-MNIST/train-labels-idx1-ubyte.gz', 'r')
+    f = gzip.open(inputDataPath + '/Fashion-MNIST/train-labels-idx1-ubyte.gz', 'r')
     for i in range(num_images):
         f.read(8)
         buf = f.read(1 * 32)
