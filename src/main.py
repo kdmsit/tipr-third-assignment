@@ -87,7 +87,7 @@ if __name__ == '__main__':
     print(np.shape(trainLabel))
     # endregion
 
-    (trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
+    '''(trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
 
 
 
@@ -208,4 +208,4 @@ if __name__ == '__main__':
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
             print("\tAccuracy:")
             print("\t- Training Accuracy:\t{}".format(train_accuracy))
-            print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
+            print("\t- Validation Accuracy:\t{}".format(vali_accuracy))'''
