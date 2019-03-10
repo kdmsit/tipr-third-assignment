@@ -83,9 +83,10 @@ if __name__ == '__main__':
     labels = pd.DataFrame(labels)
     trainData = (images)
     Label = (labels)
-    print(len(Label))
+    print(Label)
     trainLabel=[]
-    for i in range(0,len(Label)):
+    for i in range(len(Label)):
+        print(i)
         label=Label[i][0]
         print(label)
         l = [0 for j in range(10)]
@@ -93,6 +94,7 @@ if __name__ == '__main__':
         l[label] = 1
         print(l)
         trainLabel.append(l)
+        print(trainLabel)
 
     print(np.array(trainData).shape)
     print(np.array(trainLabel).shape)
