@@ -88,7 +88,7 @@ if __name__ == '__main__':
     for i in range(0,len(Label)):
         label=Label[i][0]
         print(label)
-        l = [0 for i in range(10)]
+        l = [0 for j in range(10)]
         print(l)
         l[label] = 1
         print(l)
