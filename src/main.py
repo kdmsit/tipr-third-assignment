@@ -59,7 +59,7 @@ if __name__ == '__main__':
     inputDataPath = "../data"
     outputDataPath = "/output"
     trainData=[]
-    trainLabel=[]
+    Label=[]
     '''data = input_data.read_data_sets('data/Fashion-MNIST/', one_hot=True)
     print("DataType ",type(data))
     print("Size of:")
@@ -81,8 +81,14 @@ if __name__ == '__main__':
         f.read(8)
         buf = f.read(1 * 32)
         labels = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
-        trainLabel.append(labels)
-    trainLabel=tf.one_hot(trainLabel,10)
+        Label.append(labels)
+    print(Label)
+    trainLabel=[]
+    for label in Label:
+        l=np.zeros((1,10))
+        l[label]=1
+        trainLabel.append(l)
+    print(trainLabel)
     print(np.shape(trainData))
     print(np.shape(trainLabel))
     # endregion
