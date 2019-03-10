@@ -59,15 +59,15 @@ if __name__ == '__main__':
     outputDataPath = "/output"
     trainData=[]
     trainLabel=[]
-    '''data = input_data.read_data_sets('data/Fashion-MNIST/', one_hot=True)
+    data = input_data.read_data_sets('data/Fashion-MNIST/', one_hot=True)
     print("DataType ",type(data))
     print("Size of:")
     print("- Training-set:\t\t{}".format(len(data.train.labels)))
     print("- Test-set:\t\t{}".format(len(data.test.labels)))
-    print("- Validation-set:\t{}".format(len(data.validation.labels)))'''
+    print("- Validation-set:\t{}".format(len(data.validation.labels)))
 
     # region Fashion-MNIST
-    f = gzip.open(path + inputDataPath + '/Fashion-MNIST/train-images-idx3-ubyte.gz', 'r')
+    '''f = gzip.open(path + inputDataPath + '/Fashion-MNIST/train-images-idx3-ubyte.gz', 'r')
     image_size = 28
     num_images = 1000
     buf = f.read(image_size * image_size * num_images)
@@ -81,8 +81,7 @@ if __name__ == '__main__':
         buf = f.read(1 * 32)
         labels = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
         trainLabel.append(labels)
-    print(np.shape(trainData))
-    print(np.shape(trainLabel))
+    #print(trainLabel)'''
     # endregion
 
     # Placeholder variable for the input images
