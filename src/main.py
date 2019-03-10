@@ -60,8 +60,8 @@ if __name__ == '__main__':
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
     inputDataPath = "../data/Fashion-MNIST"
     outputDataPath = "/output"
-    trainData=[]
-    Label=[]
+    #trainData=[]
+    #Label=[]
     '''data = input_data.read_data_sets('data/Fashion-MNIST/', one_hot=True)
     print("DataType ",type(data))
     print("Size of:")
@@ -81,16 +81,15 @@ if __name__ == '__main__':
 
     images = pd.DataFrame(images)
     labels = pd.DataFrame(labels)
-    train_set = (images)
-    train_label = (labels)
-    #print(Label)
+    trainData = (images)
+    Label = (labels)
     trainLabel=[]
     for label in Label:
         print(label)
         l=np.zeros((1,10))
         l[label]=1
         trainLabel.append(l)
-    #print(trainLabel)
+
     print(np.array(trainData).shape)
     print(np.array(trainLabel).shape)
 
