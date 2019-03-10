@@ -89,8 +89,8 @@ if __name__ == '__main__':
         l[label]=1
         trainLabel.append(l)
     print(trainLabel)
-    print(np.shape(trainData))
-    print(np.shape(trainLabel))
+    #print(np.shape(trainData))
+    #print(np.shape(trainLabel))
     # endregion
 
     '''(trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
