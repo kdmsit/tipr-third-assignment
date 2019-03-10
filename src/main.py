@@ -60,6 +60,7 @@ if __name__ == '__main__':
     trainData=[]
     trainLabel=[]
     data = input_data.read_data_sets('data/Fashion-MNIST/', one_hot=True)
+    print(type(data))
     print("Size of:")
     print("- Training-set:\t\t{}".format(len(data.train.labels)))
     print("- Test-set:\t\t{}".format(len(data.test.labels)))
