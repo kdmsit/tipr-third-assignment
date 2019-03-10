@@ -1,6 +1,8 @@
-import gzip
 import numpy as np
 import tensorflow as tf
+import os
+import pandas as  pd
+import gzip
 import matplotlib.pyplot as plt
 import time
 from tensorflow.examples.tutorials.mnist import input_data
@@ -67,21 +69,20 @@ if __name__ == '__main__':
     print("- Test-set:\t\t{}".format(len(data.test.labels)))
     print("- Validation-set:\t{}".format(len(data.validation.labels)))'''
 
-    # region Fashion-MNIST
-    f = gzip.open(inputDataPath + '/Fashion-MNIST/train-images-idx3-ubyte.gz', 'r')
-    image_size = 28
-    num_images = 60000
-    buf = f.read(image_size * image_size * num_images)
-    trainData = np.frombuffer(buf, dtype=np.uint8).astype(np.float32)
-    trainData = trainData.reshape(num_images, np.square(image_size))
-    #print(trainData)
+    path1 = "C:\\Users\\Paarth\\Desktop\\tipr-third-assignment-master\\data\\Fashion-MNIST"
+    kind = 'train'
+    labels_path = os.path.join(path1, '%s-labels-idx1-ubyte.gz' % kind)
+    images_path = os.path.join(path1, '%s-images-idx3-ubyte.gz' % kind)
+    with gzip.open(labels_path, 'rb') as lbpath:
+        labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
 
-    f = gzip.open(inputDataPath + '/Fashion-MNIST/train-labels-idx1-ubyte.gz', 'r')
-    for i in range(num_images):
-        f.read(8)
-        buf = f.read(1 * 32)
-        labels = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
-        Label.append(labels)
+    with gzip.open(images_path, 'rb') as imgpath:
+        images = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels), 784)
+
+    images = pd.DataFrame(images)
+    labels = pd.DataFrame(labels)
+    train_set = (images)
+    train_label = (labels)
     #print(Label)
     trainLabel=[]
     for label in Label:
@@ -92,7 +93,7 @@ if __name__ == '__main__':
     #print(trainLabel)
     print(np.array(trainData).shape)
     print(np.array(trainLabel).shape)
-    # endregion
+
 
     '''(trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
 
