@@ -4,6 +4,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import time
 from tensorflow.examples.tutorials.mnist import input_data
+from sklearn.model_selection import train_test_split
 
 
 def new_conv_layer(input, num_input_channels, filter_size, num_filters, name):
@@ -69,7 +70,7 @@ if __name__ == '__main__':
     # region Fashion-MNIST
     f = gzip.open(inputDataPath + '/Fashion-MNIST/train-images-idx3-ubyte.gz', 'r')
     image_size = 28
-    num_images = 1000
+    num_images = 60000
     buf = f.read(image_size * image_size * num_images)
     trainData = np.frombuffer(buf, dtype=np.uint8).astype(np.float32)
     trainData = trainData.reshape(num_images, np.square(image_size))
@@ -83,7 +84,12 @@ if __name__ == '__main__':
         trainLabel.append(labels)
     print(np.shape(trainData))
     print(np.shape(trainLabel))
+    trainLabel=tf.one_hot(trainLabel,10)
     # endregion
+
+    (trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
+
+
 
     # Placeholder variable for the input images
     x = tf.placeholder(tf.float32, shape=[None, 28 * 28], name='X')
@@ -173,7 +179,7 @@ if __name__ == '__main__':
             start_time = time.time()
             train_accuracy = 0
 
-            for batch in range(0, int(len(data.train.labels) / batch_size)):
+            for batch in range(0, int(len(trainLabels) / batch_size)):
                 # Get a batch of images and labels
                 x_batch, y_true_batch = data.train.next_batch(batch_size)
 
@@ -188,7 +194,7 @@ if __name__ == '__main__':
 
                 # Generate summary with the current batch of data and write to file
                 summ = sess.run(merged_summary, feed_dict=feed_dict_train)
-                writer.add_summary(summ, epoch * int(len(data.train.labels) / batch_size) + batch)
+                writer.add_summary(summ, epoch * int(len(trainLabel) / batch_size) + batch)
 
             train_accuracy /= int(len(data.train.labels) / batch_size)
 
