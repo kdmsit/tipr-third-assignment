@@ -81,23 +81,24 @@ if __name__ == '__main__':
 
     images = pd.DataFrame(images)
     labels = pd.DataFrame(labels)
-    trainData = (images)
+    Data = (images)
     Label = np.array(labels)
-    trainLabel=[]
+    LabelArray=[]
     for i in range(len(Label)):
         label=Label[i][0]
         l = [0 for j in range(10)]
         l[label] = 1
-        trainLabel.append(l)
+        LabelArray.append(l)
 
-    print(np.array(trainData).shape)
-    print(np.array(trainLabel).shape)
-
-
-    '''(trainData, testData, trainLabels, testLabels) = train_test_split(trainData,trainLabel, test_size=0.10, random_state=42)
+    print(np.array(Data).shape)
+    print(np.array(LabelArray).shape)
 
 
+    (trainData, testData, trainLabel, testLabel) = train_test_split(Data,LabelArray, test_size=0.10, random_state=42)
 
+
+
+    # region Description
     # Placeholder variable for the input images
     x = tf.placeholder(tf.float32, shape=[None, 28 * 28], name='X')
     # Reshape it into [num_images, img_height, img_width, num_channels]
@@ -172,6 +173,7 @@ if __name__ == '__main__':
 
     num_epochs = 100
     batch_size = 100
+    # endregion
 
     with tf.Session() as sess:
         # Initialize all variables
@@ -185,10 +187,14 @@ if __name__ == '__main__':
 
             start_time = time.time()
             train_accuracy = 0
-
-            for batch in range(0, int(len(trainLabels) / batch_size)):
+            batchstartIndex = 0
+            for batch in range(0, int(len(trainLabel) / batch_size)):
+                batchendIndex = batchstartIndex + batch_size
+                x_batch=trainData[batchstartIndex:batchendIndex]
+                y_true_batch=trainLabel
+                batchstartIndex=batchendIndex
                 # Get a batch of images and labels
-                x_batch, y_true_batch = data.train.next_batch(batch_size)
+                #x_batch, y_true_batch = data.train.next_batch(batch_size)
 
                 # Put the batch into a dict with the proper names for placeholder variables
                 feed_dict_train = {x: x_batch, y_true: y_true_batch}
@@ -200,14 +206,13 @@ if __name__ == '__main__':
                 train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
 
                 # Generate summary with the current batch of data and write to file
-                summ = sess.run(merged_summary, feed_dict=feed_dict_train)
-                writer.add_summary(summ, epoch * int(len(trainLabel) / batch_size) + batch)
+                #summ = sess.run(merged_summary, feed_dict=feed_dict_train)
+                #writer.add_summary(summ, epoch * int(len(trainLabel) / batch_size) + batch)
 
-            train_accuracy /= int(len(data.train.labels) / batch_size)
+            train_accuracy /= int(len(trainLabel) / batch_size)
 
             # Generate summary and validate the model on the entire validation set
-            summ, vali_accuracy = sess.run([merged_summary, accuracy],
-                                           feed_dict={x: data.validation.images, y_true: data.validation.labels})
+            summ, vali_accuracy = sess.run([merged_summary, accuracy],feed_dict={x: testData, y_true: testLabel})
             writer1.add_summary(summ, epoch)
 
             end_time = time.time()
@@ -215,4 +220,4 @@ if __name__ == '__main__':
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
             print("\tAccuracy:")
             print("\t- Training Accuracy:\t{}".format(train_accuracy))
-            print("\t- Validation Accuracy:\t{}".format(vali_accuracy))'''
+            print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
