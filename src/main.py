@@ -83,10 +83,10 @@ if __name__ == '__main__':
     labels = pd.DataFrame(labels)
     trainData = (images)
     Label = (labels)
-    print(Label)
     trainLabel=[]
     for i in range(0,len(Label)):
         label=Label[i][0]
+        print(label)
         l = np.zeros((1, 10))
         l[label] = 1
         trainLabel.append(l)
