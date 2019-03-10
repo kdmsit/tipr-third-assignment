@@ -87,7 +87,7 @@ if __name__ == '__main__':
     for i in range(0,len(Label)):
         label=Label[i][0]
         print(label)
-        l = np.zeros((1, 10))
+        l = [0 for i in range(10)]
         l[label] = 1
         trainLabel.append(l)
 
