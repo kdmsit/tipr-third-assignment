@@ -85,6 +85,8 @@ if __name__ == '__main__':
             datadict = pickle.load(fo, encoding='bytes')
         data=np.array(datadict[b'data'])
         labels=np.array(datadict[b'labels'])
+        print(np.shape(data))
+        print(np.shape(Data))
         Data=np.concatenate((np.array(Data),data))
         Label=np.concatenate((np.array(Label),labels))
     print(len(Data))
