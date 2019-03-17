@@ -194,7 +194,7 @@ if __name__ == '__main__':
                 batchendIndex = batchstartIndex + batch_size
                 x_batch=trainData[batchstartIndex:batchendIndex]
                 y_true_batch=trainLabel[batchstartIndex:batchendIndex]
-                print(y_true_batch)
+                #print(y_true_batch)
                 batchstartIndex=batchendIndex
                 # Get a batch of images and labels
                 #x_batch, y_true_batch = data.train.next_batch(batch_size)
@@ -209,7 +209,7 @@ if __name__ == '__main__':
                 #train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
                 acc,y_cls,y_tru = sess.run([accuracy,y_pred_cls,y_true_cls],feed_dict=feed_dict_train)
                 f1micro=f1_score(y_tru,y_cls,average='micro')
-                #print(a)
+                print(f1micro)
                 #print(y_cls)
                 train_accuracy +=acc
                 #y_pred_label.append(y_cls)
