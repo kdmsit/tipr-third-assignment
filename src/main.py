@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
     # region Description
     # Placeholder variable for the input images
-    x = tf.placeholder(tf.float32, shape=[None, 28 * 28], name='X')
+    x = tf.placeholder(tf.float32, shape=[None, 32*32], name='X')
     # Reshape it into [num_images, img_height, img_width, num_channels]
     x_image = tf.reshape(x, [-1, 32, 32, 3])
 
