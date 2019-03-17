@@ -77,14 +77,16 @@ if __name__ == '__main__':
     #inputDataPath = "../data/Fashion-MNIST"
     inputDataPath = "../data/CIFAR-10"
     outputDataPath = "/output"
-    Data=[]
-    Label=[]
+    Data=np.array()
+    Label=np.array()
     for i in range(5):
         labels_path = os.path.join(inputDataPath,'data_batch_'+str(i+1))
         with open(labels_path, 'rb') as fo:
             datadict = pickle.load(fo, encoding='bytes')
-        Data=np.vstack((Data,datadict[b'data']))
-        Label=np.vstack((Label,datadict[b'labels']))
+        data=np.array(datadict[b'data'])
+        labels=np.array(datadict[b'labels'])
+        Data=np.concatenate((Data,data))
+        Label=np.concatenate((Label,labels))
     print(len(Data))
     print(len(Label))
     LabelArray = []
