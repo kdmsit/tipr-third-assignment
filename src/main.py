@@ -188,6 +188,8 @@ if __name__ == '__main__':
             start_time = time.time()
             y_pred_label=[]
             train_accuracy = 0
+            train_f1micro=0
+            train_f1macro=0
             batchstartIndex = 0
             for batch in range(0, int(len(trainLabel) / batch_size)):
                 acc=0
@@ -208,8 +210,8 @@ if __name__ == '__main__':
                 # Calculate the accuracy on the batch of training data
                 #train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
                 acc,y_cls,y_tru = sess.run([accuracy,y_pred_cls,y_true_cls],feed_dict=feed_dict_train)
-                f1micro=f1_score(y_tru,y_cls,average='micro')
-                print(f1micro)
+                train_f1micro +=f1_score(y_tru,y_cls,average='micro')
+                train_f1macro += f1_score(y_tru, y_cls, average='macro')
                 #print(y_cls)
                 train_accuracy +=acc
                 #y_pred_label.append(y_cls)
@@ -219,9 +221,11 @@ if __name__ == '__main__':
                 #writer.add_summary(summ, epoch * int(len(trainLabel) / batch_size) + batch)
 
             train_accuracy /= int(len(trainLabel) / batch_size)
+            train_f1micro  /=  int(len(trainLabel) / batch_size)
+            train_f1macro /= int(len(trainLabel) / batch_size)
+            print("F1_Score_Micro"+str(train_f1micro))
+            print("F1_Score_Micro" + str(train_f1macro))
             #fpr, tpr, tresholds = sk.metrics.roc_curve(y_true, y_pred_label)
-            print(np.shape(y_pred_label))
-            print(np.shape(trainLabel))
 
             # Generate summary and validate the model on the entire validation set
             summ, vali_accuracy = sess.run([merged_summary, accuracy],feed_dict={x: testData, y_true: testLabel})
