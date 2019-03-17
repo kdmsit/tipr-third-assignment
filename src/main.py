@@ -143,9 +143,9 @@ if __name__ == '__main__':
     activation="relu"
     for i in range(len(config)):
         if(i==0):
-            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=config[i], num_filters=6,name="conv"+str(i))
+            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=config[i], num_filters=10,name="conv"+str(i))
         else:
-            layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=6, filter_size=config[i],num_filters=6, name="conv" + str(i))
+            layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=10, filter_size=config[i],num_filters=10, name="conv" + str(i))
         layer_pool = new_pool_layer(layer_conv, name="pool"+str(i))
         if(str.lower(activation)=="relu"):
             layer_relu = new_relu_layer(layer_pool, name="relu"+str(i))
