@@ -175,7 +175,9 @@ if __name__ == '__main__':
     batch_size = 100
     # endregion
 
-    with tf.Session() as sess:
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    with tf.Session(config=config) as sess:
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
 
