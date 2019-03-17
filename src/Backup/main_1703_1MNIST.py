@@ -1,7 +1,6 @@
 import numpy as np
 import tensorflow as tf
 import os
-import pickle
 import pandas as  pd
 import gzip
 from sklearn.metrics import f1_score
@@ -74,26 +73,18 @@ def new_fc_layer(input, num_inputs, num_outputs, name):
 
 if __name__ == '__main__':
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
-    #inputDataPath = "../data/Fashion-MNIST"
-    inputDataPath = "../data/CIFAR-10"
+    inputDataPath = "../data/Fashion-MNIST"
     outputDataPath = "/output"
     #trainData=[]
     #Label=[]
+    '''data = input_data.read_data_sets('data/Fashion-MNIST/', one_hot=True)
+    print("DataType ",type(data))
+    print("Size of:")
+    print("- Training-set:\t\t{}".format(len(data.train.labels)))
+    print("- Test-set:\t\t{}".format(len(data.test.labels)))
+    print("- Validation-set:\t{}".format(len(data.validation.labels)))'''
 
-    labels_path = os.path.join(inputDataPath,'data_batch_1')
-    with open(labels_path, 'rb') as fo:
-        datadict = pickle.load(fo, encoding='bytes')
-    Data=datadict[b'data']
-    Label=datadict[b'labels']
-    LabelArray = []
-    for i in range(len(Label)):
-        label = Label[i]
-        l = [0 for j in range(10)]
-        l[label] = 1
-        LabelArray.append(l)
-
-    # region MNIST Fashion
-    '''labels_path = os.path.join(inputDataPath, 'train-labels-idx1-ubyte.gz')
+    labels_path = os.path.join(inputDataPath, 'train-labels-idx1-ubyte.gz')
     images_path = os.path.join(inputDataPath, 'train-images-idx3-ubyte.gz')
     with gzip.open(labels_path, 'rb') as lbpath:
         labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
@@ -110,10 +101,8 @@ if __name__ == '__main__':
         label=Label[i][0]
         l = [0 for j in range(10)]
         l[label] = 1
-        LabelArray.append(l)'''
-    # endregion
+        LabelArray.append(l)
 
-    # region Rest Code
     print(np.array(Data).shape)
     print(np.array(LabelArray).shape)
 
@@ -126,7 +115,7 @@ if __name__ == '__main__':
     # Placeholder variable for the input images
     x = tf.placeholder(tf.float32, shape=[None, 28 * 28], name='X')
     # Reshape it into [num_images, img_height, img_width, num_channels]
-    x_image = tf.reshape(x, [-1, 28, 28, 3])
+    x_image = tf.reshape(x, [-1, 28, 28, 1])
 
     # Placeholder variable for the true labels associated with the images
     y_true = tf.placeholder(tf.float32, shape=[None, 10], name='y_true')
@@ -136,7 +125,7 @@ if __name__ == '__main__':
     activation="relu"
     for i in range(len(config)):
         if(i==0):
-            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=config[i], num_filters=6,name="conv"+str(i))
+            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=1, filter_size=config[i], num_filters=6,name="conv"+str(i))
         else:
             layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=6, filter_size=config[i],num_filters=6, name="conv" + str(i))
         layer_pool = new_pool_layer(layer_conv, name="pool"+str(i))
@@ -275,4 +264,3 @@ if __name__ == '__main__':
             print("\t- Validation F1_Micro:\t{}".format(val_f1micro))
             print("\t- Validation F1_Macro:\t{}".format(val_f1macro))
             print("\n")
-    # endregion
