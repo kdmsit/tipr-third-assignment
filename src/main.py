@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
             train_accuracy /= int(len(trainLabel) / batch_size)
             #fpr, tpr, tresholds = sk.metrics.roc_curve(y_true, y_pred_label)
-            print(np.shape(y_pred))
+            print(np.shape(y_pred_label))
 
             # Generate summary and validate the model on the entire validation set
             summ, vali_accuracy = sess.run([merged_summary, accuracy],feed_dict={x: testData, y_true: testLabel})
