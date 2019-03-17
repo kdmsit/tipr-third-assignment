@@ -207,8 +207,8 @@ if __name__ == '__main__':
 
                 # Calculate the accuracy on the batch of training data
                 #train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
-                acc,y_cls = sess.run([accuracy,y_pred_cls],feed_dict=feed_dict_train)
-                f1micro=f1_score(y_true_batch,y_cls,average='micro')
+                acc,y_cls,y_tru = sess.run([accuracy,y_pred_cls,y_true_cls],feed_dict=feed_dict_train)
+                f1micro=f1_score(y_tru,y_cls,average='micro')
                 #print(a)
                 #print(y_cls)
                 train_accuracy +=acc
