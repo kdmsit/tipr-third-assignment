@@ -223,17 +223,23 @@ if __name__ == '__main__':
             train_accuracy /= int(len(trainLabel) / batch_size)
             train_f1micro  /=  int(len(trainLabel) / batch_size)
             train_f1macro /= int(len(trainLabel) / batch_size)
-            print("F1_Score_Micro"+str(train_f1micro))
-            print("F1_Score_Micro" + str(train_f1macro))
+
             #fpr, tpr, tresholds = sk.metrics.roc_curve(y_true, y_pred_label)
 
             # Generate summary and validate the model on the entire validation set
-            summ, vali_accuracy = sess.run([merged_summary, accuracy],feed_dict={x: testData, y_true: testLabel})
-            writer1.add_summary(summ, epoch)
+            val_f1micro=0
+            val_f1macro=0
+            vali_accuracy,val_y_cls,val_y_tru = sess.run([accuracy],feed_dict={x: testData, y_true: testLabel})
+            val_f1micro += f1_score(y_tru, y_cls, average='micro')
+            val_f1macro += f1_score(y_tru, y_cls, average='macro')
 
             end_time = time.time()
 
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
             print("\tAccuracy:")
             print("\t- Training Accuracy:\t{}".format(train_accuracy))
+            print("\t- Training F1_Score_Micro:\t{}".format(train_f1micro))
+            print("\t- Training F1_Score_Macro:\t{}".format(train_f1macro))
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
+            print("\t- Training F1_Score_Micro:\t{}".format(val_f1micro))
+            print("\t- Training F1_Score_Macro:\t{}".format(val_f1macro))
