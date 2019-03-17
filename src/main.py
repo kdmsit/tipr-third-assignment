@@ -149,7 +149,7 @@ if __name__ == '__main__':
         correct_prediction = tf.equal(y_pred_cls, y_true_cls)
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-    '''# Initialize the FileWriter
+    # Initialize the FileWriter
     writer = tf.summary.FileWriter("Training_FileWriter/")
     writer1 = tf.summary.FileWriter("Validation_FileWriter/")
 
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     tf.summary.scalar('accuracy', accuracy)
 
     # Merge all summaries together
-    merged_summary = tf.summary.merge_all()'''
+    merged_summary = tf.summary.merge_all()
 
     num_epochs = 100
     batch_size = 100
