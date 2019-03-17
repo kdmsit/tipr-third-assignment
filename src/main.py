@@ -109,7 +109,7 @@ if __name__ == '__main__':
 
     # region Layer1
     # Convolutional Layer 1
-    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=1, filter_size=5, num_filters=6,name="conv1")
+    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=1, filter_size=5, num_filters=10,name="conv1")
 
     # Pooling Layer 1
     layer_pool1 = new_pool_layer(layer_conv1, name="pool1")
@@ -120,7 +120,7 @@ if __name__ == '__main__':
 
     # region Layer2
     # Convolutional Layer 2
-    layer_conv2, weights_conv2 = new_conv_layer(input=layer_relu1, num_input_channels=6, filter_size=5, num_filters=16,name="conv2")
+    layer_conv2, weights_conv2 = new_conv_layer(input=layer_relu1, num_input_channels=10, filter_size=5, num_filters=16,name="conv2")
 
     # Pooling Layer 2
     layer_pool2 = new_pool_layer(layer_conv2, name="pool2")
@@ -241,7 +241,6 @@ if __name__ == '__main__':
             end_time = time.time()
 
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
-            print("\n")
             print("\t- Training   Accuracy:\t{}".format(train_accuracy))
             print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
             print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
@@ -249,3 +248,4 @@ if __name__ == '__main__':
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
             print("\t- Validation F1_Micro:\t{}".format(val_f1micro))
             print("\t- Validation F1_Macro:\t{}".format(val_f1macro))
+            print("\n")
