@@ -241,10 +241,11 @@ if __name__ == '__main__':
             end_time = time.time()
 
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
-            print("\tAccuracy:")
+            print("\n")
             print("\t- Training   Accuracy:\t{}".format(train_accuracy))
             print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
             print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+            print("\n")
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
             print("\t- Validation F1_Micro:\t{}".format(val_f1micro))
             print("\t- Validation F1_Macro:\t{}".format(val_f1macro))
