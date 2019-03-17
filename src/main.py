@@ -229,7 +229,7 @@ if __name__ == '__main__':
             # Generate summary and validate the model on the entire validation set
             val_f1micro=0
             val_f1macro=0
-            vali_accuracy,val_y_cls,val_y_tru = sess.run([accuracy],feed_dict={x: testData, y_true: testLabel})
+            vali_accuracy,val_y_cls,val_y_tru = sess.run([accuracy,y_pred_cls,y_true_cls],feed_dict={x: testData, y_true: testLabel})
             val_f1micro += f1_score(y_tru, y_cls, average='micro')
             val_f1macro += f1_score(y_tru, y_cls, average='macro')
 
