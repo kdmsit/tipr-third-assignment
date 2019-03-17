@@ -190,6 +190,8 @@ if __name__ == '__main__':
             train_accuracy = 0
             batchstartIndex = 0
             for batch in range(0, int(len(trainLabel) / batch_size)):
+                acc=0
+                y_cls=[]
                 batchendIndex = batchstartIndex + batch_size
                 x_batch=trainData[batchstartIndex:batchendIndex]
                 y_true_batch=trainLabel[batchstartIndex:batchendIndex]
