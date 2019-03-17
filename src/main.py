@@ -120,7 +120,7 @@ if __name__ == '__main__':
 
     # region Layer2
     # Convolutional Layer 2
-    layer_conv2, weights_conv2 = new_conv_layer(input=layer_relu1, num_input_channels=10, filter_size=5, num_filters=16,name="conv2")
+    layer_conv2, weights_conv2 = new_conv_layer(input=layer_relu1, num_input_channels=6, filter_size=5, num_filters=16,name="conv2")
 
     # Pooling Layer 2
     layer_pool2 = new_pool_layer(layer_conv2, name="pool2")
