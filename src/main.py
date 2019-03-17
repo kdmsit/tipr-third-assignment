@@ -68,8 +68,8 @@ if __name__ == '__main__':
     print("- Test-set:\t\t{}".format(len(data.test.labels)))
     print("- Validation-set:\t{}".format(len(data.validation.labels)))'''
 
-    labels_path = os.path.join(inputDataPath, 's-labels-idx1-ubyte.gz')
-    images_path = os.path.join(inputDataPath, 's-images-idx3-ubyte.gz')
+    labels_path = os.path.join(inputDataPath, 'train-labels-idx1-ubyte.gz')
+    images_path = os.path.join(inputDataPath, 'train-images-idx3-ubyte.gz')
     with gzip.open(labels_path, 'rb') as lbpath:
         labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
 
