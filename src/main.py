@@ -109,7 +109,7 @@ if __name__ == '__main__':
 
     # region Layer1
     # Convolutional Layer 1
-    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=10, filter_size=5, num_filters=6,name="conv1")
+    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=1, filter_size=5, num_filters=6,name="conv1")
 
     # Pooling Layer 1
     layer_pool1 = new_pool_layer(layer_conv1, name="pool1")
