@@ -235,16 +235,16 @@ if __name__ == '__main__':
             val_f1micro=0
             val_f1macro=0
             vali_accuracy,val_y_cls,val_y_tru = sess.run([accuracy,y_pred_cls,y_true_cls],feed_dict={x: testData, y_true: testLabel})
-            val_f1micro += f1_score(y_tru, y_cls, average='micro')
-            val_f1macro += f1_score(y_tru, y_cls, average='macro')
+            val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
+            val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
 
             end_time = time.time()
 
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
             print("\tAccuracy:")
-            print("\t- Training Accuracy:\t{}".format(train_accuracy))
-            print("\t- Training F1_Micro:\t{}".format(train_f1micro))
-            print("\t- Training F1_Macro:\t{}".format(train_f1macro))
+            print("\t- Training   Accuracy:\t{}".format(train_accuracy))
+            print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+            print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
-            print("\t- Training F1_Micro:\t{}".format(val_f1micro))
-            print("\t- Training F1_Macro:\t{}".format(val_f1macro))
+            print("\t- Validation F1_Micro:\t{}".format(val_f1micro))
+            print("\t- Validation F1_Macro:\t{}".format(val_f1macro))
