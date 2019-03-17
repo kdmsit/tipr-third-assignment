@@ -108,27 +108,43 @@ if __name__ == '__main__':
     y_true_cls = tf.argmax(y_true, dimension=1)
 
     config=[6,6,8]
-    for i in range(len(config)):
-        if(i==0):
-            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=1, filter_size=config[i], num_filters=6,name="conv"+str(i))
-        else:
-            layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=6, filter_size=config[i],num_filters=6, name="conv" + str(i))
-        layer_pool = new_pool_layer(layer_conv, name="pool"+str(i))
-        layer_relu = new_relu_layer(layer_pool, name="relu"+str(i))
-        if(i==len(config)-1):
-            # Flatten Layer
-            num_features = layer_relu.get_shape()[1:4].num_elements()
-            layer_flat = tf.reshape(layer_relu, [-1, num_features])
 
-            # Fully-Connected Layer 1
-            layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=128, name="fc1")
+    # region Layer1
+    # Convolutional Layer 1
+    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=1, filter_size=5, num_filters=10,name="conv1")
 
-            # RelU layer 3
-            layer_relu3 = new_relu_layer(layer_fc1, name="relu"+str(i+1))
+    # Pooling Layer 1
+    layer_pool1 = new_pool_layer(layer_conv1, name="pool1")
 
-            # Fully-Connected Layer 2
-            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=128, num_outputs=10, name="fc2")
+    # RelU layer 1
+    layer_relu1 = new_relu_layer(layer_pool1, name="relu1")
+    # endregion
 
+    # region Layer2
+    # Convolutional Layer 2
+    layer_conv2, weights_conv2 = new_conv_layer(input=layer_relu1, num_input_channels=10, filter_size=5, num_filters=16,name="conv2")
+
+    # Pooling Layer 2
+    layer_pool2 = new_pool_layer(layer_conv2, name="pool2")
+
+    # RelU layer 2
+    layer_relu2 = new_relu_layer(layer_pool2, name="relu2")
+    # endregion
+
+    # region Classification Layers
+    # Flatten Layer
+    num_features = layer_relu2.get_shape()[1:4].num_elements()
+    layer_flat = tf.reshape(layer_relu2, [-1, num_features])
+
+    # Fully-Connected Layer 1
+    layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=128, name="fc1")
+
+    # RelU layer 3
+    layer_relu3 = new_relu_layer(layer_fc1, name="relu3")
+
+    # Fully-Connected Layer 2
+    layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=128, num_outputs=10, name="fc2")
+    # endregion
 
     # Use Softmax function to normalize the output
     with tf.variable_scope("Softmax"):
