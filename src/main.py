@@ -83,8 +83,8 @@ if __name__ == '__main__':
         labels_path = os.path.join(inputDataPath,'data_batch_'+str(i+1))
         with open(labels_path, 'rb') as fo:
             datadict = pickle.load(fo, encoding='bytes')
-        Data=np.vstack(Data,datadict[b'data'])
-        Label=np.vstack(Label,datadict[b'labels'])
+        Data=np.vstack(Data,np.array(datadict[b'data']))
+        Label=np.vstack(Label,np.array(datadict[b'labels']))
     print(len(Data))
     print(len(Label))
     LabelArray = []
