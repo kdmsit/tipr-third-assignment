@@ -205,10 +205,10 @@ if __name__ == '__main__':
 
                 # Calculate the accuracy on the batch of training data
                 #train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
-                acc,y_pred_cls = sess.run([accuracy,y_pred],feed_dict=feed_dict_train)
-                print(y_pred)
+                acc,y_cls = sess.run([accuracy,y_pred_cls],feed_dict=feed_dict_train)
+                print(sess.run(y_cls))
                 train_accuracy +=acc
-                y_pred_label.append(y_pred_cls)
+                y_pred_label.append(y_cls)
 
                 # Generate summary with the current batch of data and write to file
                 #summ = sess.run(merged_summary, feed_dict=feed_dict_train)
