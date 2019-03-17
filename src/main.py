@@ -3,9 +3,8 @@ import tensorflow as tf
 import os
 import pandas as  pd
 import gzip
-import matplotlib.pyplot as plt
+import sklearn as sk
 import time
-from tensorflow.examples.tutorials.mnist import input_data
 from sklearn.model_selection import train_test_split
 
 
@@ -109,8 +108,7 @@ if __name__ == '__main__':
     y_true_cls = tf.argmax(y_true, dimension=1)
 
     # Convolutional Layer 1
-    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=1, filter_size=5, num_filters=6,
-                                                name="conv1")
+    layer_conv1, weights_conv1 = new_conv_layer(input=x_image, num_input_channels=1, filter_size=5, num_filters=6,name="conv1")
 
     # Pooling Layer 1
     layer_pool1 = new_pool_layer(layer_conv1, name="pool1")
@@ -188,6 +186,7 @@ if __name__ == '__main__':
         for epoch in range(num_epochs):
 
             start_time = time.time()
+            y_pred_label=[]
             train_accuracy = 0
             batchstartIndex = 0
             for batch in range(0, int(len(trainLabel) / batch_size)):
@@ -205,13 +204,18 @@ if __name__ == '__main__':
                 sess.run(optimizer, feed_dict=feed_dict_train)
 
                 # Calculate the accuracy on the batch of training data
-                train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
+                #train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
+                acc,y_pred_cls = sess.run(accuracy, feed_dict=feed_dict_train)
+                train_accuracy +=acc
+                y_pred_label.append(y_pred_cls)
 
                 # Generate summary with the current batch of data and write to file
                 #summ = sess.run(merged_summary, feed_dict=feed_dict_train)
                 #writer.add_summary(summ, epoch * int(len(trainLabel) / batch_size) + batch)
 
             train_accuracy /= int(len(trainLabel) / batch_size)
+            #fpr, tpr, tresholds = sk.metrics.roc_curve(y_true, y_pred_label)
+            print(np.shape(y_pred))
 
             # Generate summary and validate the model on the entire validation set
             summ, vali_accuracy = sess.run([merged_summary, accuracy],feed_dict={x: testData, y_true: testLabel})
