@@ -191,7 +191,6 @@ if __name__ == '__main__':
             batchstartIndex = 0
             for batch in range(0, int(len(trainLabel) / batch_size)):
                 acc=0
-                y_cls=[]
                 batchendIndex = batchstartIndex + batch_size
                 x_batch=trainData[batchstartIndex:batchendIndex]
                 y_true_batch=trainLabel[batchstartIndex:batchendIndex]
@@ -210,7 +209,7 @@ if __name__ == '__main__':
                 acc,y_cls = sess.run([accuracy,y_pred_cls],feed_dict=feed_dict_train)
                 #a=f1_score(y_true_batch,y_cls,average='micro')
                 #print(a)
-                print(sess.run(y_cls))
+                #print(sess.run(y_cls))
                 train_accuracy +=acc
                 #y_pred_label.append(y_cls)
 
