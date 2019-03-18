@@ -99,8 +99,6 @@ if __name__ == '__main__':
                 labels=np.array(datadict[b'labels'])
                 Data=np.concatenate((Data,data))
                 Label=np.concatenate((Label,labels))
-        print(len(Data))
-        print(len(Label))
         LabelArray = []
         for i in range(len(Label)):
             label = Label[i]
@@ -131,8 +129,8 @@ if __name__ == '__main__':
         # endregion
 
     # region Rest Code
-    print(np.array(Data).shape)
-    print(np.array(LabelArray).shape)
+    #print(np.array(Data).shape)
+    #print(np.array(LabelArray).shape)
 
 
     (trainData, testData, trainLabel, testLabel) = train_test_split(Data,LabelArray, test_size=0.10, random_state=42)
