@@ -248,13 +248,13 @@ if __name__ == '__main__':
             val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
             val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
             fashion_tsne = TSNE(n_components=2).fit_transform(embedd)
-            target_ids = range(10)
+            target_ids = range(len(val_y_tru[0]))
             plt.figure(figsize=(6, 5))
             colors = 'r', 'g', 'b', 'c', 'm', 'y', 'k', 'w', 'orange', 'purple'
-            for i, c, label in zip(target_ids, colors, 10):
+            for i, c, label in zip(target_ids, colors, [0,1,2,3,4,5,6,7,8,9]):
                 plt.scatter(target_ids[y == i, 0], target_ids[y == i, 1], c=c, label=label)
             plt.legend()
-            plt.savefig('../output/tsnemnist.png')
+            plt.savefig('../output/tsneMnist.png')
             #print(np.shape(embedd))
             print("\n")
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
