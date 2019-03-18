@@ -2,8 +2,9 @@ import numpy as np
 import tensorflow as tf
 import os
 import pickle
-import pandas as  pd
 import gzip
+import datetime
+import pandas as pd
 from sklearn.metrics import f1_score
 import time
 from sklearn.model_selection import train_test_split
@@ -73,52 +74,61 @@ def new_fc_layer(input, num_inputs, num_outputs, name):
 
 
 if __name__ == '__main__':
+    datasetname="CIFAR-10"
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
     #inputDataPath = "../data/Fashion-MNIST"
     inputDataPath = "../data/CIFAR-10"
-    outputDataPath = "/output"
+    outputDataPath = "/output/"
+    outputFileName = datasetname + "_stat_" + str(datetime.datetime.now()) + ".txt"
+    f = open(outputDataPath + outputFileName, "w")
+    Message="This is Convolutional Neural Network for DataSet "+str(datasetname)
+    print(Message)
+    f.write(Message)
+    f.write("\n")
+    if(datasetname=="CIFAR-10"):
+        # region CIFAR-10
+        for i in range(5):
+            labels_path = os.path.join(inputDataPath,'data_batch_'+str(i+1))
+            with open(labels_path, 'rb') as fo:
+                datadict = pickle.load(fo, encoding='bytes')
+            if(i==0):
+                Data = np.array(datadict[b'data'])
+                Label = np.array(datadict[b'labels'])
+            else:
+                data=np.array(datadict[b'data'])
+                labels=np.array(datadict[b'labels'])
+                Data=np.concatenate((Data,data))
+                Label=np.concatenate((Label,labels))
+        print(len(Data))
+        print(len(Label))
+        LabelArray = []
+        for i in range(len(Label)):
+            label = Label[i]
+            l = [0 for j in range(10)]
+            l[label] = 1
+            LabelArray.append(l)
+        # endregion
+    elif(datasetname=="Fashion-MNIST"):
+        # region MNIST Fashion
+        labels_path = os.path.join(inputDataPath, 'train-labels-idx1-ubyte.gz')
+        images_path = os.path.join(inputDataPath, 'train-images-idx3-ubyte.gz')
+        with gzip.open(labels_path, 'rb') as lbpath:
+            labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
 
-    for i in range(5):
-        labels_path = os.path.join(inputDataPath,'data_batch_'+str(i+1))
-        with open(labels_path, 'rb') as fo:
-            datadict = pickle.load(fo, encoding='bytes')
-        if(i==0):
-            Data = np.array(datadict[b'data'])
-            Label = np.array(datadict[b'labels'])
-        else:
-            data=np.array(datadict[b'data'])
-            labels=np.array(datadict[b'labels'])
-            Data=np.concatenate((Data,data))
-            Label=np.concatenate((Label,labels))
-    print(len(Data))
-    print(len(Label))
-    LabelArray = []
-    for i in range(len(Label)):
-        label = Label[i]
-        l = [0 for j in range(10)]
-        l[label] = 1
-        LabelArray.append(l)
+        with gzip.open(images_path, 'rb') as imgpath:
+            images = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels), 784)
 
-    # region MNIST Fashion
-    '''labels_path = os.path.join(inputDataPath, 'train-labels-idx1-ubyte.gz')
-    images_path = os.path.join(inputDataPath, 'train-images-idx3-ubyte.gz')
-    with gzip.open(labels_path, 'rb') as lbpath:
-        labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
-
-    with gzip.open(images_path, 'rb') as imgpath:
-        images = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels), 784)
-
-    images = pd.DataFrame(images)
-    labels = pd.DataFrame(labels)
-    Data = (images)
-    Label = np.array(labels)
-    LabelArray=[]
-    for i in range(len(Label)):
-        label=Label[i][0]
-        l = [0 for j in range(10)]
-        l[label] = 1
-        LabelArray.append(l)'''
-    # endregion
+        images = pd.DataFrame(images)
+        labels = pd.DataFrame(labels)
+        Data = (images)
+        Label = np.array(labels)
+        LabelArray=[]
+        for i in range(len(Label)):
+            label=Label[i][0]
+            l = [0 for j in range(10)]
+            l[label] = 1
+            LabelArray.append(l)
+        # endregion
 
     # region Rest Code
     print(np.array(Data).shape)
