@@ -245,7 +245,7 @@ if __name__ == '__main__':
             vali_accuracy, val_y_cls, val_y_tru,embedd = sess.run([accuracy, y_pred_cls, y_true_cls,layer_relu],feed_dict={x: testData, y_true: testLabel})
             val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
             val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
-            print(embedd)
+            print(np.shape(embedd))
             print("\n")
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
             f.write("\t- Validation Accuracy:\t{}".format(vali_accuracy))
