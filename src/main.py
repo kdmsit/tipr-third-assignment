@@ -230,6 +230,7 @@ if __name__ == '__main__':
         batch_size = 100
         # endregion
 
+        saver = tf.train.Saver()
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
         with tf.Session(config=config) as sess:
@@ -284,11 +285,11 @@ if __name__ == '__main__':
                 #fpr, tpr, tresholds = sk.metrics.roc_curve(y_true, y_pred_label)
 
                 # Generate summary and validate the model on the entire validation set
-                val_f1micro=0
+                '''val_f1micro=0
                 val_f1macro=0
                 vali_accuracy,val_y_cls,val_y_tru = sess.run([accuracy,y_pred_cls,y_true_cls],feed_dict={x: testData, y_true: testLabel})
                 val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
-                val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
+                val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')'''
 
                 end_time = time.time()
 
@@ -305,7 +306,7 @@ if __name__ == '__main__':
                 f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
                 f.write("\n")
                 print("\n")
-                print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
+                '''print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
                 f.write("\t- Validation Accuracy:\t{}".format(vali_accuracy))
                 f.write("\n")
                 print("\t- Validation F1_Micro:\t{}".format(val_f1micro))
@@ -314,5 +315,6 @@ if __name__ == '__main__':
                 print("\t- Validation F1_Macro:\t{}".format(val_f1macro))
                 f.write("\t- Validation F1_Macro:\t{}".format(val_f1macro))
                 f.write("\n")
-                print("\n")
+                print("\n")'''
+            saver.save(sess, "/SaveModel/model.ckpt")
     # endregion
