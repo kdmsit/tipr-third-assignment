@@ -76,12 +76,13 @@ def new_fc_layer(input, num_inputs, num_outputs, name):
 if __name__ == '__main__':
     datasetname="Fashion-MNIST"
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
-    #inputDataPath = "../data/Fashion-MNIST"
-    inputDataPath = "../data/CIFAR-10"
+    #
+
     outputDataPath = "../output/"
 
     if(datasetname=="CIFAR-10"):
         # region CIFAR-10
+        inputDataPath = "../data/CIFAR-10"
         for i in range(5):
             labels_path = os.path.join(inputDataPath,'data_batch_'+str(i+1))
             with open(labels_path, 'rb') as fo:
@@ -103,6 +104,7 @@ if __name__ == '__main__':
         # endregion
     elif(datasetname=="Fashion-MNIST"):
         # region MNIST Fashion
+        inputDataPath = "../data/Fashion-MNIST"
         labels_path = os.path.join(inputDataPath, 'train-labels-idx1-ubyte.gz')
         images_path = os.path.join(inputDataPath, 'train-images-idx3-ubyte.gz')
         with gzip.open(labels_path, 'rb') as lbpath:
