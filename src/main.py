@@ -248,10 +248,10 @@ if __name__ == '__main__':
             val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
             val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
             fashion_tsne = TSNE(n_components=2).fit_transform(embedd)
-            target_ids = range(len(val_y_tru[0]))
+            target_ids = range(10)
             plt.figure(figsize=(6, 5))
             colors = 'r', 'g', 'b', 'c', 'm', 'y', 'k', 'w', 'orange', 'purple'
-            for i, c, label in zip(target_ids, colors, val_y_tru[0]):
+            for i, c, label in zip(target_ids, colors, 10):
                 plt.scatter(target_ids[y == i, 0], target_ids[y == i, 1], c=c, label=label)
             plt.legend()
             plt.savefig('../output/tsnemnist.png')
