@@ -147,7 +147,7 @@ if __name__ == '__main__':
     y_true_cls = tf.argmax(y_true, dimension=1)
 
     #config_list=[[5,5],[5,10],[10,10],[10,20],[5,5,10],[5,10,10],[10,10,10],[5,5,10,10],[5,10,15,20]]
-    config_list = [[32,32]]
+    config_list = [[8,8]]
     for configuration in config_list:
         outputFileName = datasetname + "_stat_"+ str(configuration) + str(datetime.datetime.now()) + ".txt"
         f = open(outputDataPath + outputFileName, "w")
