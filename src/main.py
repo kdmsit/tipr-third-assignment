@@ -150,7 +150,15 @@ if __name__ == '__main__':
     y_true_cls = tf.argmax(y_true, dimension=1)
 
     config=[6,6,8]
+    print(config)
+    print("\n")
+    f.write("Configuration"+str(config))
+    f.write("\n")
     activation="relu"
+    print(activation)
+    print("\n")
+    f.write("Activation Function" + str(activation))
+    f.write("\n")
     for i in range(len(config)):
         if(i==0):
             layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=config[i], num_filters=10,name="conv"+str(i))
@@ -284,12 +292,26 @@ if __name__ == '__main__':
             end_time = time.time()
 
             print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
+            f.write("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
+            f.write("\n")
             print("\t- Training   Accuracy:\t{}".format(train_accuracy))
+            f.write("\t- Training   Accuracy:\t{}".format(train_accuracy))
+            f.write("\n")
             print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+            f.write("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+            f.write("\n")
             print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+            f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+            f.write("\n")
             print("\n")
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
+            f.write("\t- Validation Accuracy:\t{}".format(vali_accuracy))
+            f.write("\n")
             print("\t- Validation F1_Micro:\t{}".format(val_f1micro))
+            f.write("\t- Validation F1_Micro:\t{}".format(val_f1micro))
+            f.write("\n")
             print("\t- Validation F1_Macro:\t{}".format(val_f1macro))
+            f.write("\t- Validation F1_Macro:\t{}".format(val_f1macro))
+            f.write("\n")
             print("\n")
     # endregion
