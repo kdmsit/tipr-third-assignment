@@ -248,7 +248,7 @@ if __name__ == '__main__':
             val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
             val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
             fashion_tsne = TSNE(n_components=2).fit_transform(embedd)
-            target_ids = range(len(val_y_tru[0]))
+            target_ids = range(10)
             plt.figure(figsize=(6, 5))
             colors = 'r', 'g', 'b', 'c', 'm', 'y', 'k', 'w', 'orange', 'purple'
             for i, c, label in zip(target_ids, colors, [0,1,2,3,4,5,6,7,8,9]):
