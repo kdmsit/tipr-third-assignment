@@ -320,5 +320,5 @@ if __name__ == '__main__':
                 f.write("\t- Validation F1_Macro:\t{}".format(val_f1macro))
                 f.write("\n")
                 print("\n")'''
-            saver.save(sess, "/SaveModel/model.ckpt")
+            saver.save(sess, "../SaveModel/model.ckpt")
     # endregion
