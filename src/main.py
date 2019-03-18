@@ -78,7 +78,7 @@ if __name__ == '__main__':
     path = "/home/kdcse/Documents/Second Semester/TIPR/Assignment-3/tipr-third-assignment"
     #inputDataPath = "../data/Fashion-MNIST"
     inputDataPath = "../data/CIFAR-10"
-    outputDataPath = "/output/"
+    outputDataPath = "../output/"
     outputFileName = datasetname + "_stat_" + str(datetime.datetime.now()) + ".txt"
     f = open(outputDataPath + outputFileName, "w")
     Message="This is Convolutional Neural Network for DataSet "+str(datasetname)
