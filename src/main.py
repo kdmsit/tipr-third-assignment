@@ -231,7 +231,7 @@ if __name__ == '__main__':
         # Merge all summaries together
         merged_summary = tf.summary.merge_all()
 
-        num_epochs = 10
+        num_epochs = 5
         batch_size = 100
         # endregion
 
@@ -247,7 +247,6 @@ if __name__ == '__main__':
 
             # Loop over number of epochs
             for epoch in range(num_epochs):
-
                 start_time = time.time()
                 y_pred_label=[]
                 train_accuracy = 0
