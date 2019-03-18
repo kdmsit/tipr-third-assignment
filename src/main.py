@@ -248,7 +248,7 @@ if __name__ == '__main__':
             val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
             val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
             print(np.shape(embedd))
-            fashion_tsne = TSNE(n_components=2).fit_transform(embedd)
+            fashion_tsne = TSNE(n_components=10).fit_transform(embedd)
             target_ids = range(10)
             plt.figure(figsize=(6, 5))
             print(np.shape(fashion_tsne))
