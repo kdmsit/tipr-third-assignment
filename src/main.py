@@ -16,7 +16,7 @@ def new_conv_layer(input, num_input_channels, filter_size, num_filters, name):
         shape = [filter_size, filter_size, num_input_channels, num_filters]
 
         # Create new weights (filters) with the given shape
-        weights = tf.Variable(tf.truncated_normal(shape, stddev=0.05))
+        weights = tf.Variable(tf.truncated_normal(shape, stddev=0.05),name=name+'_weights')
 
         # Create new biases, one for each filter
         biases = tf.Variable(tf.constant(0.05, shape=[num_filters]))
@@ -165,6 +165,7 @@ if __name__ == '__main__':
                 layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=configuration[i], num_filters=10,name="conv"+str(i))
             else:
                 layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=10, filter_size=configuration[i],num_filters=10, name="conv" + str(i))
+            print(weights_conv)
             layer_pool = new_pool_layer(layer_conv, name="pool"+str(i))
             if(str.lower(activation)=="relu"):
                 layer_relu = new_relu_layer(layer_pool, name="relu"+str(i))
