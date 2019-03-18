@@ -251,6 +251,8 @@ if __name__ == '__main__':
             fashion_tsne = TSNE(n_components=2).fit_transform(embedd)
             target_ids = range(10)
             plt.figure(figsize=(6, 5))
+            print(np.shape(fashion_tsne))
+            print(np.shape(testLabel))
             plt.scatter(fashion_tsne,testLabel)
             #colors = 'r', 'g', 'b', 'c', 'm', 'y', 'k', 'w', 'orange', 'purple'
             #for i, c, label in zip(target_ids, colors, testLabel):
