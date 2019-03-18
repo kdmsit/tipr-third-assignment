@@ -6,6 +6,8 @@ import gzip
 import datetime
 import pandas as pd
 from sklearn.metrics import f1_score
+from sklearn.manifold import TSNE
+from matplotlib import pyplot as plt
 import time
 from sklearn.model_selection import train_test_split
 
@@ -245,7 +247,15 @@ if __name__ == '__main__':
             vali_accuracy, val_y_cls, val_y_tru,embedd = sess.run([accuracy, y_pred_cls, y_true_cls,layer_fc1],feed_dict={x: testData, y_true: testLabel})
             val_f1micro += f1_score(val_y_cls, val_y_tru, average='micro')
             val_f1macro += f1_score(val_y_cls, val_y_tru, average='macro')
-            print(np.shape(embedd))
+            fashion_tsne = TSNE(n_components=2).fit_transform(embedd)
+            target_ids = range(len(val_y_tru[0]))
+            plt.figure(figsize=(6, 5))
+            colors = 'r', 'g', 'b', 'c', 'm', 'y', 'k', 'w', 'orange', 'purple'
+            for i, c, label in zip(target_ids, colors, val_y_tru[0]):
+                plt.scatter(target_ids[y == i, 0], target_ids[y == i, 1], c=c, label=label)
+            plt.legend()
+            plt.savefig('../output/tsnemnist.png')
+            #print(np.shape(embedd))
             print("\n")
             print("\t- Validation Accuracy:\t{}".format(vali_accuracy))
             f.write("\t- Validation Accuracy:\t{}".format(vali_accuracy))
