@@ -166,7 +166,8 @@ if __name__ == '__main__':
         f.write("\n")
         for i in range(len(configuration)):
             if(i==0):
-                layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=configuration[i], num_filters=10,name="conv"+str(i))
+                #layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=configuration[i], num_filters=10,name="conv"+str(i))
+                layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=1,filter_size=configuration[i], num_filters=10,name="conv" + str(i))
             else:
                 layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=10, filter_size=configuration[i],num_filters=10, name="conv" + str(i))
             print(weights_conv)
