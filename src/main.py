@@ -91,15 +91,11 @@ if __name__ == '__main__':
         datasetname = sys.argv[6]
         con = sys.argv[8]
         con = con[1:-1]
-        print(con)
-        '''x = []
-        con = con[1:-1]
-        print(con)
         con = con.split(',')
         x = []
         for k in con:
-            x.append(int(k))'''
-        configuration = list(con)
+            x.append(int(k))
+        configuration = x
         print(configuration)
         print(len(configuration))
         activation = sys.argv[8+len(configuration)]
