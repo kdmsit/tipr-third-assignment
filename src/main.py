@@ -130,11 +130,11 @@ if __name__ == '__main__':
         TestLabel = np.array(testdatadict[b'labels'])
         trainData,trainLabel,testData,testLabel=Data,Label,TestData,TestLabel
         print(np.shape(trainData))
-        x,y = trainLabel.shape
+        x= trainLabel.shape
         np.reshape(trainLabel,(x,1))
         print(np.shape(trainLabel))
         print(np.shape(testData))
-        x, y = testLabel.shape
+        x= testLabel.shape
         np.reshape(testLabel, (x, 1))
         print(np.shape(testLabel))
         # endregion
