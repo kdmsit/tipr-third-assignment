@@ -231,7 +231,7 @@ if __name__ == '__main__':
                 layer_relu3 = new_tanh_layer(layer_fc1, name="swish" + str(i+1))
 
             # Fully-Connected Layer 2
-            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=1024, num_outputs=10, name="fc2")
+            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=512, num_outputs=10, name="fc2")
 
     # Use Softmax function to normalize the output
     with tf.variable_scope("Softmax"):
