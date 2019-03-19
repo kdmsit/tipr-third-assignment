@@ -165,7 +165,7 @@ if __name__ == '__main__':
         with gzip.open(test_labels_path, 'rb') as lbpath:
             labels_test = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
         with gzip.open(Test_images_path, 'rb') as imgpath:
-            images_test = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels), 784)
+            images_test = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels_test), 784)
         testimages = pd.DataFrame(labels_test)
         testlabels = pd.DataFrame(images_test)
         TestData = (testimages)
