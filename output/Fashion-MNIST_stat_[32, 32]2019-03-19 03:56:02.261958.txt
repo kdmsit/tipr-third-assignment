@@ -1,3 +1,0 @@
-This is Convolutional Neural Network for DataSet Fashion-MNIST
-Configuration[32, 32]
-Activation Functionrelu
