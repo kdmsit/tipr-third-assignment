@@ -263,8 +263,8 @@ if __name__ == '__main__':
     # Merge all summaries together
     merged_summary = tf.summary.merge_all()
 
-    num_epochs = 10
-    batch_size = 100
+    num_epochs = 200
+    batch_size = 512
     # endregion
 
     saver = tf.train.Saver()
