@@ -174,11 +174,14 @@ if __name__ == '__main__':
 
 
     # region Description
-    # Placeholder variable for the input images
-    x = tf.placeholder(tf.float32, shape=[None, 32*32*3], name='X')
-    # Reshape it into [num_images, img_height, img_width, num_channels]
-    x_image = tf.reshape(x, [-1, 32, 32, 3])
-
+    if (datasetname == "CIFAR-10"):
+        x = tf.placeholder(tf.float32, shape=[None, 32 * 32 * 3], name='X')
+        x_image = tf.reshape(x, [-1, 32, 32, 3])
+        ConvConfig = [3, 10, 512]
+    elif (datasetname == "Fashion-MNIST"):
+        x = tf.placeholder(tf.float32, shape=[None, 28 * 28], name='X')
+        x_image = tf.reshape(x, [-1, 28, 28, 1])
+        ConvConfig = [1, 10, 512]
     # Placeholder variable for the true labels associated with the images
     y_true = tf.placeholder(tf.float32, shape=[None, 10], name='y_true')
     y_true_cls = tf.argmax(y_true, dimension=1)
@@ -197,11 +200,12 @@ if __name__ == '__main__':
     print("\n")
     f.write("Activation Function" + str(activation))
     f.write("\n")
+
     for i in range(len(configuration)):
         if(i==0):
-            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=3, filter_size=configuration[i], num_filters=10,name="conv"+str(i))
+            layer_conv, weights_conv = new_conv_layer(input=x_image, num_input_channels=ConvConfig[0], filter_size=configuration[i], num_filters=ConvConfig[1],name="conv"+str(i))
         else:
-            layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=10, filter_size=configuration[i],num_filters=10, name="conv" + str(i))
+            layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=ConvConfig[1], filter_size=configuration[i],num_filters=ConvConfig[1], name="conv" + str(i))
         print(weights_conv)
         layer_pool = new_pool_layer(layer_conv, name="pool"+str(i))
         if(str.lower(activation)=="relu"):
@@ -218,7 +222,7 @@ if __name__ == '__main__':
             layer_flat = tf.reshape(layer_relu, [-1, num_features])
 
             # Fully-Connected Layer 1
-            layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=512, name="fc1")
+            layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=ConvConfig[2], name="fc1")
 
             # RelU layer 3
             if (str.lower(activation) == "relu"):
@@ -231,7 +235,7 @@ if __name__ == '__main__':
                 layer_relu3 = new_tanh_layer(layer_fc1, name="swish" + str(i+1))
 
             # Fully-Connected Layer 2
-            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=512, num_outputs=10, name="fc2")
+            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=ConvConfig[2], num_outputs=10, name="fc2")
 
     # Use Softmax function to normalize the output
     with tf.variable_scope("Softmax"):
@@ -262,9 +266,12 @@ if __name__ == '__main__':
 
     # Merge all summaries together
     merged_summary = tf.summary.merge_all()
-
-    num_epochs = 200
-    batch_size = 512
+    if(datasetname=="Fashion-MNIST"):
+        num_epochs = 100
+        batch_size = 100
+    elif(datasetname=="CIFAR-10"):
+        num_epochs = 200
+        batch_size = 500
     # endregion
 
     saver = tf.train.Saver()
@@ -336,7 +343,7 @@ if __name__ == '__main__':
             f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
             f.write("\n")
             print("\n")
-        saver.save(sess, "../SaveModel/model_"+str(configuration)+".ckpt")
+        saver.save(sess, "../SaveModel/model_"+str(datasetname)+"_"+str(configuration)+".ckpt")
         #  validate the model on the entire validation set
         val_f1micro=0
         val_f1macro=0
