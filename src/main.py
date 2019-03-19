@@ -218,7 +218,7 @@ if __name__ == '__main__':
             layer_flat = tf.reshape(layer_relu, [-1, num_features])
 
             # Fully-Connected Layer 1
-            layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=200, name="fc1")
+            layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=512, name="fc1")
 
             # RelU layer 3
             if (str.lower(activation) == "relu"):
@@ -231,7 +231,7 @@ if __name__ == '__main__':
                 layer_relu3 = new_tanh_layer(layer_fc1, name="swish" + str(i+1))
 
             # Fully-Connected Layer 2
-            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=200, num_outputs=10, name="fc2")
+            layer_fc2 = new_fc_layer(input=layer_relu3, num_inputs=1024, num_outputs=10, name="fc2")
 
     # Use Softmax function to normalize the output
     with tf.variable_scope("Softmax"):
@@ -336,6 +336,7 @@ if __name__ == '__main__':
             f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
             f.write("\n")
             print("\n")
+        saver.save(sess, "/SaveModel/model_"+str(configuration)+".ckpt")
         #  validate the model on the entire validation set
         val_f1micro=0
         val_f1macro=0
