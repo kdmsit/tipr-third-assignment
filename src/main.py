@@ -131,11 +131,11 @@ if __name__ == '__main__':
         trainData,trainLabel,testData,testLabel=Data,Label,TestData,TestLabel
         print(np.shape(trainData))
         x= trainLabel.shape
-        np.reshape(trainLabel,(x[0],1))
+        trainLabel=np.reshape(trainLabel,(x[0],1))
         print(np.shape(trainLabel))
         print(np.shape(testData))
         x= testLabel.shape
-        np.reshape(testLabel, (x[0], 1))
+        testLabel=np.reshape(testLabel, (x[0], 1))
         print(np.shape(testLabel))
         # endregion
     elif(datasetname=="Fashion-MNIST"):
