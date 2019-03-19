@@ -287,6 +287,8 @@ if __name__ == '__main__':
     elif(datasetname=="CIFAR-10"):
         num_epochs = 200
         batch_size = 500
+    f.write("Epochs :" + str(num_epochs)+", BatchSize :"+ str(batch_size))
+    f.write("\n")
     # endregion
 
     saver = tf.train.Saver()
