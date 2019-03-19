@@ -90,14 +90,14 @@ if __name__ == '__main__':
         testfilepath = sys.argv[4]
         datasetname = sys.argv[6]
         con = sys.argv[8]
-        x = []
+        '''x = []
         con = con[1:-1]
         print(con)
         con = con.split(',')
         x = []
         for k in con:
-            x.append(int(k))
-        configuration = x
+            x.append(int(k))'''
+        configuration = list(con)
         print(configuration)
         print(len(configuration))
         activation = sys.argv[8+len(configuration)]
