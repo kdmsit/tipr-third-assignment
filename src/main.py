@@ -126,9 +126,8 @@ if __name__ == '__main__':
         test_data_path = os.path.join(testfilepath, 'test_batch')
         with open(test_data_path, 'rb') as file:
             testdatadict = pickle.load(file, encoding='bytes')
-        if(i==0):
-            TestData = np.array(testdatadict[b'data'])
-            TestLabel = np.array(testdatadict[b'labels'])
+        TestData = np.array(testdatadict[b'data'])
+        TestLabel = np.array(testdatadict[b'labels'])
         trainData,trainLabel,testData,testLabel=Data,Label,TestData,TestLabel
         # endregion
     elif(datasetname=="Fashion-MNIST"):
