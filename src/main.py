@@ -279,7 +279,7 @@ if __name__ == '__main__':
 
         # Loop over number of epochs
         for epoch in range(num_epochs):
-
+            print(epoch)
             start_time = time.time()
             y_pred_label=[]
             train_accuracy = 0
@@ -336,7 +336,7 @@ if __name__ == '__main__':
             f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
             f.write("\n")
             print("\n")
-        saver.save(sess, "/SaveModel/model_"+str(configuration)+".ckpt")
+        saver.save(sess, "../SaveModel/model_"+str(configuration)+".ckpt")
         #  validate the model on the entire validation set
         val_f1micro=0
         val_f1macro=0
