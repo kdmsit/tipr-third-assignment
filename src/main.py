@@ -102,8 +102,8 @@ if __name__ == '__main__':
     outputDataPath = "../output/"
     if(datasetname=="CIFAR-10"):
         # region CIFAR-10
+        # region Train Data
         for i in range(5):
-            # region Train Data
             train_data_path = os.path.join(trainfilepath, 'data_batch_' + str(i + 1))
             with open(train_data_path, 'rb') as fo:
                 datadict = pickle.load(fo, encoding='bytes')
@@ -121,39 +121,32 @@ if __name__ == '__main__':
                 l = [0 for j in range(10)]
                 l[label] = 1
                 LabelArray.append(l)
-            # endregion
-
+        # endregion
+        # region TestData
         test_data_path = os.path.join(testfilepath, 'test_batch')
         with open(test_data_path, 'rb') as file:
             testdatadict = pickle.load(file, encoding='bytes')
         TestData = np.array(testdatadict[b'data'])
         TestLabel = np.array(testdatadict[b'labels'])
         TestLabelArray = []
-        for i in range(len(Label)):
-            label = Label[i]
+        for i in range(len(TestLabel)):
+            label = TestLabel[i]
             l = [0 for j in range(10)]
             l[label] = 1
             TestLabelArray.append(l)
+        # endregion
         trainData,trainLabel,testData,testLabel=Data,LabelArray,TestData,TestLabelArray
-        '''print(np.shape(trainData))
-        x= trainLabel.shape
-        trainLabel=np.reshape(trainLabel,(x[0],1))
-        print(np.shape(trainLabel))
-        print(np.shape(testData))
-        x= testLabel.shape
-        testLabel=np.reshape(testLabel, (x[0], 1))
-        print(np.shape(testLabel))'''
         # endregion
     elif(datasetname=="Fashion-MNIST"):
         # region MNIST Fashion
-        train_labels_path = os.path.join(trainfilepath)
-        Train_images_path = os.path.join(trainfilepath)
+        # region Training Data
+        train_labels_path = os.path.join(trainfilepath,'train-labels-idx1-ubyte.gz')
+        Train_images_path = os.path.join(trainfilepath,'train-images-idx3-ubyte.gz')
         with gzip.open(train_labels_path, 'rb') as lbpath:
             labels = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
 
         with gzip.open(Train_images_path, 'rb') as imgpath:
             images = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels), 784)
-
         images = pd.DataFrame(images)
         labels = pd.DataFrame(labels)
         Data = (images)
@@ -164,6 +157,28 @@ if __name__ == '__main__':
             l = [0 for j in range(10)]
             l[label] = 1
             LabelArray.append(l)
+        # endregion
+
+        # region Test Data
+        test_labels_path = os.path.join(trainfilepath, 't10k-labels-idx1-ubyte.gz')
+        Test_images_path = os.path.join(trainfilepath, 't10k-images-idx3-ubyte.gz')
+        with gzip.open(test_labels_path, 'rb') as lbpath:
+            labels_test = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
+        with gzip.open(Test_images_path, 'rb') as imgpath:
+            images_test = np.frombuffer(imgpath.read(), dtype=np.uint8, offset=16).reshape(len(labels), 784)
+        testimages = pd.DataFrame(labels_test)
+        testlabels = pd.DataFrame(images_test)
+        TestData = (testimages)
+        TestLabel = np.array(testlabels)
+        TestLabelArray = []
+        for i in range(len(TestLabel)):
+            label = TestLabel[i][0]
+            l = [0 for j in range(10)]
+            l[label] = 1
+            TestLabelArray.append(l)
+        # endregion
+
+        trainData, trainLabel, testData, testLabel = Data, LabelArray, TestData, TestLabelArray
         # endregion
 
     # region Rest Code
