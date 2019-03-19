@@ -282,7 +282,7 @@ if __name__ == '__main__':
     # Merge all summaries together
     merged_summary = tf.summary.merge_all()
     if(datasetname=="Fashion-MNIST"):
-        num_epochs = 100
+        num_epochs = 50
         batch_size = 100
     elif(datasetname=="CIFAR-10"):
         num_epochs = 200
