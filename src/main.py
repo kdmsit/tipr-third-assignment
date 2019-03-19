@@ -128,15 +128,21 @@ if __name__ == '__main__':
             testdatadict = pickle.load(file, encoding='bytes')
         TestData = np.array(testdatadict[b'data'])
         TestLabel = np.array(testdatadict[b'labels'])
-        trainData,trainLabel,testData,testLabel=Data,Label,TestData,TestLabel
-        print(np.shape(trainData))
+        TestLabelArray = []
+        for i in range(len(Label)):
+            label = Label[i]
+            l = [0 for j in range(10)]
+            l[label] = 1
+            TestLabelArray.append(l)
+        trainData,trainLabel,testData,testLabel=Data,LabelArray,TestData,TestLabelArray
+        '''print(np.shape(trainData))
         x= trainLabel.shape
         trainLabel=np.reshape(trainLabel,(x[0],1))
         print(np.shape(trainLabel))
         print(np.shape(testData))
         x= testLabel.shape
         testLabel=np.reshape(testLabel, (x[0], 1))
-        print(np.shape(testLabel))
+        print(np.shape(testLabel))'''
         # endregion
     elif(datasetname=="Fashion-MNIST"):
         # region MNIST Fashion
