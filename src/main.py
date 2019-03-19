@@ -131,6 +131,7 @@ if __name__ == '__main__':
         trainData,trainLabel,testData,testLabel=Data,Label,TestData,TestLabel
         print(np.shape(trainData))
         x= trainLabel.shape
+        print(x[0])
         np.reshape(trainLabel,(x,1))
         print(np.shape(trainLabel))
         print(np.shape(testData))
