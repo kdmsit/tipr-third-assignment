@@ -98,6 +98,7 @@ if __name__ == '__main__':
         for k in con:
             x.append(int(k))
         configuration = x
+        print(len(configuration))
         activation = sys.argv[8+len(configuration)]
     outputDataPath = "../output/"
     if(datasetname=="CIFAR-10"):
