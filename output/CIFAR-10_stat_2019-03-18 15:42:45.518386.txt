@@ -1,0 +1,703 @@
+This is Convolutional Neural Network for DataSet CIFAR-10
+Configuration[6, 6, 8]
+Activation Functionrelu
+Epoch 1 completed : Time usage 42 seconds
+	- Training   Accuracy:	0.2535111121667756
+	- Training   F1_Micro:	0.25351111111111096
+	- Training   F1_Macro:	0.23095814789115646
+	- Validation Accuracy:	0.33160001039505005
+	- Validation F1_Micro:	0.3316
+	- Validation F1_Macro:	0.3245764312208702
+Epoch 2 completed : Time usage 41 seconds
+	- Training   Accuracy:	0.3570666673779488
+	- Training   F1_Micro:	0.3570666666666667
+	- Training   F1_Macro:	0.33663507812150323
+	- Validation Accuracy:	0.376800000667572
+	- Validation F1_Micro:	0.37679999999999997
+	- Validation F1_Macro:	0.3717963984981319
+Epoch 3 completed : Time usage 41 seconds
+	- Training   Accuracy:	0.39228888773255877
+	- Training   F1_Micro:	0.39228888888888885
+	- Training   F1_Macro:	0.37254935241049014
+	- Validation Accuracy:	0.4058000147342682
+	- Validation F1_Micro:	0.40579999999999994
+	- Validation F1_Macro:	0.40041041399871047
+Epoch 4 completed : Time usage 40 seconds
+	- Training   Accuracy:	0.4175555538468891
+	- Training   F1_Micro:	0.41755555555555524
+	- Training   F1_Macro:	0.3977077882710145
+	- Validation Accuracy:	0.4169999957084656
+	- Validation F1_Micro:	0.417
+	- Validation F1_Macro:	0.4100654076368279
+Epoch 5 completed : Time usage 41 seconds
+	- Training   Accuracy:	0.43466666493150924
+	- Training   F1_Micro:	0.43466666666666676
+	- Training   F1_Macro:	0.4147719825620875
+	- Validation Accuracy:	0.428600013256073
+	- Validation F1_Micro:	0.4286
+	- Validation F1_Macro:	0.42213716961949943
+Epoch 6 completed : Time usage 40 seconds
+	- Training   Accuracy:	0.45004444221655526
+	- Training   F1_Micro:	0.45004444444444397
+	- Training   F1_Macro:	0.4303631591993024
+	- Validation Accuracy:	0.4413999915122986
+	- Validation F1_Micro:	0.44139999999999996
+	- Validation F1_Macro:	0.4352139789250155
+Epoch 7 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.46351110829247366
+	- Training   F1_Micro:	0.46351111111111126
+	- Training   F1_Macro:	0.4437611275318048
+	- Validation Accuracy:	0.453000009059906
+	- Validation F1_Micro:	0.453
+	- Validation F1_Macro:	0.44700922269883103
+Epoch 8 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.47373333043522303
+	- Training   F1_Micro:	0.47373333333333295
+	- Training   F1_Macro:	0.4541764493378239
+	- Validation Accuracy:	0.46160000562667847
+	- Validation F1_Micro:	0.46159999999999995
+	- Validation F1_Macro:	0.4558671653082881
+Epoch 9 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.48413333038489026
+	- Training   F1_Micro:	0.4841333333333332
+	- Training   F1_Macro:	0.46439669665999833
+	- Validation Accuracy:	0.4641999900341034
+	- Validation F1_Micro:	0.4642
+	- Validation F1_Macro:	0.45869343362905407
+Epoch 10 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.4934888847006692
+	- Training   F1_Micro:	0.49348888888888853
+	- Training   F1_Macro:	0.47411501305600723
+	- Validation Accuracy:	0.4713999927043915
+	- Validation F1_Micro:	0.4714
+	- Validation F1_Macro:	0.4659800681487808
+Epoch 11 completed : Time usage 40 seconds
+	- Training   Accuracy:	0.4994666628042857
+	- Training   F1_Micro:	0.49946666666666606
+	- Training   F1_Macro:	0.4798089967135061
+	- Validation Accuracy:	0.4747999906539917
+	- Validation F1_Micro:	0.4748
+	- Validation F1_Macro:	0.46901406996103373
+Epoch 12 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.5074222189188003
+	- Training   F1_Micro:	0.5074222222222228
+	- Training   F1_Macro:	0.48772599201391703
+	- Validation Accuracy:	0.47859999537467957
+	- Validation F1_Micro:	0.4786
+	- Validation F1_Macro:	0.473229031108054
+Epoch 13 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.5144222197930018
+	- Training   F1_Micro:	0.5144222222222221
+	- Training   F1_Macro:	0.49458588956542293
+	- Validation Accuracy:	0.4828000068664551
+	- Validation F1_Micro:	0.4828
+	- Validation F1_Macro:	0.4773967325348069
+Epoch 14 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.5193111080593533
+	- Training   F1_Micro:	0.5193111111111115
+	- Training   F1_Macro:	0.4997107815448065
+	- Validation Accuracy:	0.48739999532699585
+	- Validation F1_Micro:	0.4874
+	- Validation F1_Macro:	0.48214771008569796
+Epoch 15 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.5235111072990629
+	- Training   F1_Micro:	0.5235111111111115
+	- Training   F1_Macro:	0.5042032814948254
+	- Validation Accuracy:	0.4867999851703644
+	- Validation F1_Micro:	0.4868
+	- Validation F1_Macro:	0.4816730024292952
+Epoch 16 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.5286666625738143
+	- Training   F1_Micro:	0.5286666666666667
+	- Training   F1_Macro:	0.5091526840054492
+	- Validation Accuracy:	0.4925999939441681
+	- Validation F1_Micro:	0.4926
+	- Validation F1_Macro:	0.4880053266566744
+Epoch 17 completed : Time usage 38 seconds
+	- Training   Accuracy:	0.5329999952183829
+	- Training   F1_Micro:	0.5330000000000005
+	- Training   F1_Macro:	0.5134482524981575
+	- Validation Accuracy:	0.49540001153945923
+	- Validation F1_Micro:	0.4954
+	- Validation F1_Macro:	0.4906889929291756
+Epoch 18 completed : Time usage 39 seconds
+	- Training   Accuracy:	0.5370888845125834
+	- Training   F1_Micro:	0.5370888888888895
+	- Training   F1_Macro:	0.5178687251614496
+	- Validation Accuracy:	0.4952000081539154
+	- Validation F1_Micro:	0.4952
+	- Validation F1_Macro:	0.49037473716577573
+Epoch 19 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.5412666626771291
+	- Training   F1_Micro:	0.5412666666666672
+	- Training   F1_Macro:	0.5219593384022746
+	- Validation Accuracy:	0.5008000135421753
+	- Validation F1_Micro:	0.5008
+	- Validation F1_Macro:	0.4962908776283642
+Epoch 20 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5448666650719113
+	- Training   F1_Micro:	0.5448666666666669
+	- Training   F1_Macro:	0.5254433509891647
+	- Validation Accuracy:	0.501800000667572
+	- Validation F1_Micro:	0.5018
+	- Validation F1_Macro:	0.4970555631564185
+Epoch 21 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5486222198274401
+	- Training   F1_Micro:	0.5486222222222231
+	- Training   F1_Macro:	0.5291691439362166
+	- Validation Accuracy:	0.5058000087738037
+	- Validation F1_Micro:	0.5058
+	- Validation F1_Macro:	0.5012827729833428
+Epoch 22 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5511999978621801
+	- Training   F1_Micro:	0.5512000000000006
+	- Training   F1_Macro:	0.5319416553019151
+	- Validation Accuracy:	0.5098000168800354
+	- Validation F1_Micro:	0.5098
+	- Validation F1_Macro:	0.505665469480304
+Epoch 23 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5551333310206731
+	- Training   F1_Micro:	0.5551333333333337
+	- Training   F1_Macro:	0.5356858371229657
+	- Validation Accuracy:	0.5090000033378601
+	- Validation F1_Micro:	0.509
+	- Validation F1_Macro:	0.5046213810288518
+Epoch 24 completed : Time usage 47 seconds
+	- Training   Accuracy:	0.5591555531819662
+	- Training   F1_Micro:	0.5591555555555564
+	- Training   F1_Macro:	0.5399796317753515
+	- Validation Accuracy:	0.5109999775886536
+	- Validation F1_Micro:	0.511
+	- Validation F1_Macro:	0.5069585497688395
+Epoch 25 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.5629999980661604
+	- Training   F1_Micro:	0.5630000000000009
+	- Training   F1_Macro:	0.544061796907267
+	- Validation Accuracy:	0.5126000046730042
+	- Validation F1_Micro:	0.5126
+	- Validation F1_Macro:	0.5087470807619006
+Epoch 26 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5668888866239123
+	- Training   F1_Micro:	0.5668888888888898
+	- Training   F1_Macro:	0.5481492380759491
+	- Validation Accuracy:	0.5120000243186951
+	- Validation F1_Micro:	0.512
+	- Validation F1_Macro:	0.5087919039369166
+Epoch 27 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.56979999727673
+	- Training   F1_Micro:	0.569800000000001
+	- Training   F1_Macro:	0.5511845160289789
+	- Validation Accuracy:	0.5139999985694885
+	- Validation F1_Micro:	0.514
+	- Validation F1_Macro:	0.5107169006706836
+Epoch 28 completed : Time usage 50 seconds
+	- Training   Accuracy:	0.5724666643142701
+	- Training   F1_Micro:	0.5724666666666672
+	- Training   F1_Macro:	0.5538362301237492
+	- Validation Accuracy:	0.5170000195503235
+	- Validation F1_Micro:	0.517
+	- Validation F1_Macro:	0.5141383465501752
+Epoch 29 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5747111088699765
+	- Training   F1_Micro:	0.5747111111111116
+	- Training   F1_Macro:	0.55598331075681
+	- Validation Accuracy:	0.5188000202178955
+	- Validation F1_Micro:	0.5188
+	- Validation F1_Macro:	0.515941180995126
+Epoch 30 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5768444432152642
+	- Training   F1_Micro:	0.5768444444444448
+	- Training   F1_Macro:	0.5578872288135893
+	- Validation Accuracy:	0.5184000134468079
+	- Validation F1_Micro:	0.5184
+	- Validation F1_Macro:	0.5153064284960253
+Epoch 31 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.5797111097309324
+	- Training   F1_Micro:	0.5797111111111115
+	- Training   F1_Macro:	0.5610772178323915
+	- Validation Accuracy:	0.5166000127792358
+	- Validation F1_Micro:	0.5166
+	- Validation F1_Macro:	0.5129531212602586
+Epoch 32 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5821333327558306
+	- Training   F1_Micro:	0.5821333333333338
+	- Training   F1_Macro:	0.5636441268168626
+	- Validation Accuracy:	0.5185999870300293
+	- Validation F1_Micro:	0.5186
+	- Validation F1_Macro:	0.515186552074753
+Epoch 33 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5839777765009139
+	- Training   F1_Micro:	0.5839777777777786
+	- Training   F1_Macro:	0.5655337795687524
+	- Validation Accuracy:	0.5185999870300293
+	- Validation F1_Micro:	0.5186
+	- Validation F1_Macro:	0.5155045720979634
+Epoch 34 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.586733332739936
+	- Training   F1_Micro:	0.5867333333333343
+	- Training   F1_Macro:	0.5685054371678978
+	- Validation Accuracy:	0.5192000269889832
+	- Validation F1_Micro:	0.5192
+	- Validation F1_Macro:	0.5166734699141827
+Epoch 35 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5887111116780175
+	- Training   F1_Micro:	0.5887111111111117
+	- Training   F1_Macro:	0.5705520799985495
+	- Validation Accuracy:	0.5194000005722046
+	- Validation F1_Micro:	0.5194
+	- Validation F1_Macro:	0.5167662331019202
+Epoch 36 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5908222220341365
+	- Training   F1_Micro:	0.5908222222222229
+	- Training   F1_Macro:	0.572760727491178
+	- Validation Accuracy:	0.5203999876976013
+	- Validation F1_Micro:	0.5204
+	- Validation F1_Macro:	0.5180325438114274
+Epoch 37 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.5926444444391462
+	- Training   F1_Micro:	0.5926444444444452
+	- Training   F1_Macro:	0.57445398524414
+	- Validation Accuracy:	0.5212000012397766
+	- Validation F1_Micro:	0.5212
+	- Validation F1_Macro:	0.5192100209064293
+Epoch 38 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5952222212817934
+	- Training   F1_Micro:	0.595222222222223
+	- Training   F1_Macro:	0.5772647527390844
+	- Validation Accuracy:	0.5194000005722046
+	- Validation F1_Micro:	0.5194
+	- Validation F1_Macro:	0.5169077716552752
+Epoch 39 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.5973333319690493
+	- Training   F1_Micro:	0.5973333333333343
+	- Training   F1_Macro:	0.5796131380018763
+	- Validation Accuracy:	0.5203999876976013
+	- Validation F1_Micro:	0.5204
+	- Validation F1_Macro:	0.5183627630648958
+Epoch 40 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6000666662057241
+	- Training   F1_Micro:	0.600066666666667
+	- Training   F1_Macro:	0.5820526397567416
+	- Validation Accuracy:	0.5234000086784363
+	- Validation F1_Micro:	0.5234
+	- Validation F1_Macro:	0.5212692374183321
+Epoch 41 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.601355554593934
+	- Training   F1_Micro:	0.6013555555555564
+	- Training   F1_Macro:	0.5837059418738124
+	- Validation Accuracy:	0.5231999754905701
+	- Validation F1_Micro:	0.5232
+	- Validation F1_Macro:	0.5216225586580835
+Epoch 42 completed : Time usage 47 seconds
+	- Training   Accuracy:	0.6034222210778131
+	- Training   F1_Micro:	0.6034222222222224
+	- Training   F1_Macro:	0.585729211405966
+	- Validation Accuracy:	0.524399995803833
+	- Validation F1_Micro:	0.5244
+	- Validation F1_Macro:	0.5226703454816601
+Epoch 43 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6053777764903174
+	- Training   F1_Micro:	0.6053777777777779
+	- Training   F1_Macro:	0.5875920620250148
+	- Validation Accuracy:	0.5284000039100647
+	- Validation F1_Micro:	0.5284
+	- Validation F1_Macro:	0.5268387266096527
+Epoch 44 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6077777758571836
+	- Training   F1_Micro:	0.6077777777777779
+	- Training   F1_Macro:	0.5901067188867264
+	- Validation Accuracy:	0.5285999774932861
+	- Validation F1_Micro:	0.5286
+	- Validation F1_Macro:	0.5264913482677521
+Epoch 45 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6091999985112084
+	- Training   F1_Micro:	0.6092000000000001
+	- Training   F1_Macro:	0.5915247553761086
+	- Validation Accuracy:	0.5284000039100647
+	- Validation F1_Micro:	0.5284
+	- Validation F1_Macro:	0.5265626545410622
+Epoch 46 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.611288887725936
+	- Training   F1_Micro:	0.6112888888888892
+	- Training   F1_Macro:	0.59376378533322
+	- Validation Accuracy:	0.52920001745224
+	- Validation F1_Micro:	0.5292
+	- Validation F1_Macro:	0.527120813241772
+Epoch 47 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6131555547316869
+	- Training   F1_Micro:	0.6131555555555556
+	- Training   F1_Macro:	0.5954543617319483
+	- Validation Accuracy:	0.5267999768257141
+	- Validation F1_Micro:	0.5268
+	- Validation F1_Macro:	0.5244605923541791
+Epoch 48 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6143999993801117
+	- Training   F1_Micro:	0.6144000000000002
+	- Training   F1_Macro:	0.5966241038605631
+	- Validation Accuracy:	0.527400016784668
+	- Validation F1_Micro:	0.5274
+	- Validation F1_Macro:	0.5247005274784307
+Epoch 49 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6167999991443422
+	- Training   F1_Micro:	0.6167999999999995
+	- Training   F1_Macro:	0.5991249842382369
+	- Validation Accuracy:	0.5253999829292297
+	- Validation F1_Micro:	0.5254
+	- Validation F1_Macro:	0.5230417181387936
+Epoch 50 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6178666649924385
+	- Training   F1_Micro:	0.6178666666666666
+	- Training   F1_Macro:	0.6000945433979338
+	- Validation Accuracy:	0.5264000296592712
+	- Validation F1_Micro:	0.5264
+	- Validation F1_Macro:	0.5235202122037315
+Epoch 51 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6195333329174254
+	- Training   F1_Micro:	0.6195333333333328
+	- Training   F1_Macro:	0.6021639696577946
+	- Validation Accuracy:	0.5270000100135803
+	- Validation F1_Micro:	0.527
+	- Validation F1_Macro:	0.5239919987739396
+Epoch 52 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6216888893312879
+	- Training   F1_Micro:	0.6216888888888885
+	- Training   F1_Macro:	0.6042617688643175
+	- Validation Accuracy:	0.5248000025749207
+	- Validation F1_Micro:	0.5248
+	- Validation F1_Macro:	0.5221475291508083
+Epoch 53 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.622955555650923
+	- Training   F1_Micro:	0.6229555555555558
+	- Training   F1_Macro:	0.6056400074943744
+	- Validation Accuracy:	0.5289999842643738
+	- Validation F1_Micro:	0.529
+	- Validation F1_Macro:	0.5263961114857907
+Epoch 54 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6257999997006523
+	- Training   F1_Micro:	0.6258000000000002
+	- Training   F1_Macro:	0.6084156477564002
+	- Validation Accuracy:	0.5289999842643738
+	- Validation F1_Micro:	0.529
+	- Validation F1_Macro:	0.5265897218439338
+Epoch 55 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6268000007337994
+	- Training   F1_Micro:	0.6267999999999995
+	- Training   F1_Macro:	0.6094660739584867
+	- Validation Accuracy:	0.5306000113487244
+	- Validation F1_Micro:	0.5306
+	- Validation F1_Macro:	0.5281332872530871
+Epoch 56 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6279333344433042
+	- Training   F1_Micro:	0.6279333333333333
+	- Training   F1_Macro:	0.6107552946101902
+	- Validation Accuracy:	0.5278000235557556
+	- Validation F1_Micro:	0.5278
+	- Validation F1_Macro:	0.5250176735940512
+Epoch 57 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6298000005218718
+	- Training   F1_Micro:	0.6297999999999997
+	- Training   F1_Macro:	0.6126632570773295
+	- Validation Accuracy:	0.5271999835968018
+	- Validation F1_Micro:	0.5272
+	- Validation F1_Macro:	0.5237602674381445
+Epoch 58 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6315999998648961
+	- Training   F1_Micro:	0.6316
+	- Training   F1_Macro:	0.6147023853101511
+	- Validation Accuracy:	0.5288000106811523
+	- Validation F1_Micro:	0.5288
+	- Validation F1_Macro:	0.5260456046773785
+Epoch 59 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.633177776866489
+	- Training   F1_Micro:	0.6331777777777778
+	- Training   F1_Macro:	0.6165001403039853
+	- Validation Accuracy:	0.5303999781608582
+	- Validation F1_Micro:	0.5304
+	- Validation F1_Macro:	0.5275891256842261
+Epoch 60 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6346222225824992
+	- Training   F1_Micro:	0.6346222222222213
+	- Training   F1_Macro:	0.6181795065570662
+	- Validation Accuracy:	0.5289999842643738
+	- Validation F1_Micro:	0.529
+	- Validation F1_Macro:	0.525880531406795
+Epoch 61 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.63686666753557
+	- Training   F1_Micro:	0.6368666666666664
+	- Training   F1_Macro:	0.6205893091070911
+	- Validation Accuracy:	0.5271999835968018
+	- Validation F1_Micro:	0.5272
+	- Validation F1_Macro:	0.5242079060066469
+Epoch 62 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6384444460603926
+	- Training   F1_Micro:	0.638444444444444
+	- Training   F1_Macro:	0.6220562368711504
+	- Validation Accuracy:	0.5275999903678894
+	- Validation F1_Micro:	0.5276
+	- Validation F1_Macro:	0.524780796548537
+Epoch 63 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6393333338366615
+	- Training   F1_Micro:	0.6393333333333331
+	- Training   F1_Macro:	0.6227895581906137
+	- Validation Accuracy:	0.5239999890327454
+	- Validation F1_Micro:	0.524
+	- Validation F1_Macro:	0.5206193878368627
+Epoch 64 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6405555546283722
+	- Training   F1_Micro:	0.6405555555555555
+	- Training   F1_Macro:	0.6242773561066615
+	- Validation Accuracy:	0.526199996471405
+	- Validation F1_Micro:	0.5262
+	- Validation F1_Macro:	0.5224906679569243
+Epoch 65 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6420000014040205
+	- Training   F1_Micro:	0.6420000000000003
+	- Training   F1_Macro:	0.6256109395788991
+	- Validation Accuracy:	0.5246000289916992
+	- Validation F1_Micro:	0.5246
+	- Validation F1_Macro:	0.5209593134144853
+Epoch 66 completed : Time usage 50 seconds
+	- Training   Accuracy:	0.6432000010543399
+	- Training   F1_Micro:	0.6431999999999999
+	- Training   F1_Macro:	0.6269872592235103
+	- Validation Accuracy:	0.5270000100135803
+	- Validation F1_Micro:	0.527
+	- Validation F1_Macro:	0.5230198887380653
+Epoch 67 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.644822224246131
+	- Training   F1_Micro:	0.6448222222222224
+	- Training   F1_Macro:	0.6285915936914912
+	- Validation Accuracy:	0.5275999903678894
+	- Validation F1_Micro:	0.5276
+	- Validation F1_Macro:	0.5236666724278216
+Epoch 68 completed : Time usage 50 seconds
+	- Training   Accuracy:	0.6464222235149807
+	- Training   F1_Micro:	0.6464222222222222
+	- Training   F1_Macro:	0.6300565065856485
+	- Validation Accuracy:	0.526199996471405
+	- Validation F1_Micro:	0.5262
+	- Validation F1_Macro:	0.5219550578003769
+Epoch 69 completed : Time usage 50 seconds
+	- Training   Accuracy:	0.6473111119535234
+	- Training   F1_Micro:	0.6473111111111107
+	- Training   F1_Macro:	0.6308876182004786
+	- Validation Accuracy:	0.5278000235557556
+	- Validation F1_Micro:	0.5278
+	- Validation F1_Macro:	0.5240544317037463
+Epoch 70 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.6476222242249383
+	- Training   F1_Micro:	0.6476222222222212
+	- Training   F1_Macro:	0.6314430252606118
+	- Validation Accuracy:	0.5253999829292297
+	- Validation F1_Micro:	0.5254
+	- Validation F1_Macro:	0.5219630131017657
+Epoch 71 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6494444461663564
+	- Training   F1_Micro:	0.6494444444444438
+	- Training   F1_Macro:	0.6333533036113419
+	- Validation Accuracy:	0.5253999829292297
+	- Validation F1_Micro:	0.5254
+	- Validation F1_Macro:	0.5221661433717113
+Epoch 72 completed : Time usage 50 seconds
+	- Training   Accuracy:	0.6515999997986688
+	- Training   F1_Micro:	0.6515999999999992
+	- Training   F1_Macro:	0.6353506359319587
+	- Validation Accuracy:	0.5281999707221985
+	- Validation F1_Micro:	0.5282
+	- Validation F1_Macro:	0.5253699827146898
+Epoch 73 completed : Time usage 48 seconds
+	- Training   Accuracy:	0.652977778646681
+	- Training   F1_Micro:	0.6529777777777773
+	- Training   F1_Macro:	0.6369708172869712
+	- Validation Accuracy:	0.5281999707221985
+	- Validation F1_Micro:	0.5282
+	- Validation F1_Macro:	0.5251861105435656
+Epoch 74 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.653733334408866
+	- Training   F1_Micro:	0.6537333333333335
+	- Training   F1_Macro:	0.6377055932803279
+	- Validation Accuracy:	0.527400016784668
+	- Validation F1_Micro:	0.5274
+	- Validation F1_Macro:	0.5242888045638031
+Epoch 75 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6546000007788341
+	- Training   F1_Micro:	0.6545999999999997
+	- Training   F1_Macro:	0.6386625764266154
+	- Validation Accuracy:	0.5235999822616577
+	- Validation F1_Micro:	0.5236
+	- Validation F1_Macro:	0.5205024447123786
+Epoch 76 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6561555567052629
+	- Training   F1_Micro:	0.6561555555555556
+	- Training   F1_Macro:	0.6402914321213777
+	- Validation Accuracy:	0.5246000289916992
+	- Validation F1_Micro:	0.5246
+	- Validation F1_Macro:	0.5219129450283627
+Epoch 77 completed : Time usage 49 seconds
+	- Training   Accuracy:	0.6569555571344163
+	- Training   F1_Micro:	0.6569555555555552
+	- Training   F1_Macro:	0.641257881606475
+	- Validation Accuracy:	0.524399995803833
+	- Validation F1_Micro:	0.5244
+	- Validation F1_Macro:	0.5218893748218774
+Epoch 78 completed : Time usage 55 seconds
+	- Training   Accuracy:	0.6579555571079254
+	- Training   F1_Micro:	0.6579555555555558
+	- Training   F1_Macro:	0.6422381967522927
+	- Validation Accuracy:	0.5246000289916992
+	- Validation F1_Micro:	0.5246
+	- Validation F1_Macro:	0.5217961184513887
+Epoch 79 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6598444457848867
+	- Training   F1_Micro:	0.6598444444444443
+	- Training   F1_Macro:	0.6441529065585114
+	- Validation Accuracy:	0.5220000147819519
+	- Validation F1_Micro:	0.522
+	- Validation F1_Macro:	0.5194007073006508
+Epoch 80 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6610444459650252
+	- Training   F1_Micro:	0.6610444444444441
+	- Training   F1_Macro:	0.6454919040607938
+	- Validation Accuracy:	0.5249999761581421
+	- Validation F1_Micro:	0.525
+	- Validation F1_Macro:	0.5221284507455358
+Epoch 81 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6617333360513051
+	- Training   F1_Micro:	0.6617333333333334
+	- Training   F1_Macro:	0.6462350990197074
+	- Validation Accuracy:	0.5224000215530396
+	- Validation F1_Micro:	0.5224
+	- Validation F1_Macro:	0.5190666751004139
+Epoch 82 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6632888895935483
+	- Training   F1_Micro:	0.6632888888888888
+	- Training   F1_Macro:	0.6478330307164425
+	- Validation Accuracy:	0.5234000086784363
+	- Validation F1_Micro:	0.5234
+	- Validation F1_Macro:	0.5203898299938138
+Epoch 83 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6647111129760742
+	- Training   F1_Micro:	0.6647111111111109
+	- Training   F1_Macro:	0.6493641386666495
+	- Validation Accuracy:	0.5228000283241272
+	- Validation F1_Micro:	0.5228
+	- Validation F1_Macro:	0.5197848924443619
+Epoch 84 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6661555559105343
+	- Training   F1_Micro:	0.6661555555555551
+	- Training   F1_Macro:	0.6509965260856678
+	- Validation Accuracy:	0.522599995136261
+	- Validation F1_Micro:	0.5226
+	- Validation F1_Macro:	0.519485937053475
+Epoch 85 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6666666682561239
+	- Training   F1_Micro:	0.6666666666666662
+	- Training   F1_Macro:	0.6513874229999416
+	- Validation Accuracy:	0.5224000215530396
+	- Validation F1_Micro:	0.5224
+	- Validation F1_Macro:	0.5191493279255341
+Epoch 86 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6676222242249383
+	- Training   F1_Micro:	0.6676222222222225
+	- Training   F1_Macro:	0.6526646851431177
+	- Validation Accuracy:	0.5221999883651733
+	- Validation F1_Micro:	0.5222
+	- Validation F1_Macro:	0.5194238577202773
+Epoch 87 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.669088889890247
+	- Training   F1_Micro:	0.669088888888889
+	- Training   F1_Macro:	0.654079588438925
+	- Validation Accuracy:	0.5221999883651733
+	- Validation F1_Micro:	0.5222
+	- Validation F1_Macro:	0.5187131532311031
+Epoch 88 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6704222226142883
+	- Training   F1_Micro:	0.6704222222222218
+	- Training   F1_Macro:	0.655361798302646
+	- Validation Accuracy:	0.522599995136261
+	- Validation F1_Micro:	0.5226
+	- Validation F1_Macro:	0.5194374498770982
+Epoch 89 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6708666667673323
+	- Training   F1_Micro:	0.6708666666666667
+	- Training   F1_Macro:	0.6557266022755849
+	- Validation Accuracy:	0.5217999815940857
+	- Validation F1_Micro:	0.5218
+	- Validation F1_Macro:	0.5184150077782059
+Epoch 90 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6727777802944184
+	- Training   F1_Micro:	0.6727777777777775
+	- Training   F1_Macro:	0.6578635164639559
+	- Validation Accuracy:	0.5216000080108643
+	- Validation F1_Micro:	0.5216
+	- Validation F1_Macro:	0.517758630328229
+Epoch 91 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6739111114872827
+	- Training   F1_Micro:	0.673911111111111
+	- Training   F1_Macro:	0.6591948621898541
+	- Validation Accuracy:	0.517799973487854
+	- Validation F1_Micro:	0.5178
+	- Validation F1_Macro:	0.5141008571301814
+Epoch 92 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6754888885551029
+	- Training   F1_Micro:	0.6754888888888887
+	- Training   F1_Macro:	0.6605792988245245
+	- Validation Accuracy:	0.5166000127792358
+	- Validation F1_Micro:	0.5166
+	- Validation F1_Macro:	0.5129946093083736
+Epoch 93 completed : Time usage 58 seconds
+	- Training   Accuracy:	0.6767555567953322
+	- Training   F1_Micro:	0.6767555555555551
+	- Training   F1_Macro:	0.6620622567243107
+	- Validation Accuracy:	0.517799973487854
+	- Validation F1_Micro:	0.5178
+	- Validation F1_Macro:	0.5135379701579119
+Epoch 94 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6774888898266687
+	- Training   F1_Micro:	0.6774888888888883
+	- Training   F1_Macro:	0.6627946964263757
+	- Validation Accuracy:	0.5157999992370605
+	- Validation F1_Micro:	0.5158
+	- Validation F1_Macro:	0.5107329432462593
+Epoch 95 completed : Time usage 60 seconds
+	- Training   Accuracy:	0.6777777791023254
+	- Training   F1_Micro:	0.6777777777777774
+	- Training   F1_Macro:	0.6629004334377646
+	- Validation Accuracy:	0.5153999924659729
+	- Validation F1_Micro:	0.5154
+	- Validation F1_Macro:	0.5095815412753335
+Epoch 96 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6791111131509145
+	- Training   F1_Micro:	0.6791111111111101
+	- Training   F1_Macro:	0.6643829340741253
+	- Validation Accuracy:	0.5180000066757202
+	- Validation F1_Micro:	0.518
+	- Validation F1_Macro:	0.5122819360020978
+Epoch 97 completed : Time usage 59 seconds
+	- Training   Accuracy:	0.6789333336883121
+	- Training   F1_Micro:	0.6789333333333326
+	- Training   F1_Macro:	0.6640798073013942
+	- Validation Accuracy:	0.5166000127792358
+	- Validation F1_Micro:	0.5166
+	- Validation F1_Macro:	0.5103744083847087
+Epoch 98 completed : Time usage 65 seconds
+	- Training   Accuracy:	0.6803555560111999
+	- Training   F1_Micro:	0.6803555555555549
+	- Training   F1_Macro:	0.665713279912221
+	- Validation Accuracy:	0.5180000066757202
+	- Validation F1_Micro:	0.518
+	- Validation F1_Macro:	0.5123059343498287
+Epoch 99 completed : Time usage 74 seconds
+	- Training   Accuracy:	0.68033333407508
+	- Training   F1_Micro:	0.6803333333333323
+	- Training   F1_Macro:	0.6656481149746054
+	- Validation Accuracy:	0.5194000005722046
+	- Validation F1_Micro:	0.5194
+	- Validation F1_Macro:	0.5135641103979103
+Epoch 100 completed : Time usage 72 seconds
+	- Training   Accuracy:	0.681711112525728
+	- Training   F1_Micro:	0.681711111111111
+	- Training   F1_Macro:	0.6672927453170118
+	- Validation Accuracy:	0.5198000073432922
+	- Validation F1_Micro:	0.5198
+	- Validation F1_Macro:	0.5134804995692421

@@ -1,0 +1,6 @@
+This is Convolutional Neural Network for DataSet Fashion-MNIST
+Configuration[8, 8]
+Activation Functionrelu
+	- Validation Accuracy:	0.859666645526886
+	- Validation F1_Micro:	0.8596666666666667
+	- Validation F1_Macro:	0.8638327756061301
