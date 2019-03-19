@@ -129,6 +129,10 @@ if __name__ == '__main__':
         TestData = np.array(testdatadict[b'data'])
         TestLabel = np.array(testdatadict[b'labels'])
         trainData,trainLabel,testData,testLabel=Data,Label,TestData,TestLabel
+        print(np.shape(trainData))
+        print(np.shape(trainLabel))
+        print(np.shape(testData))
+        print(np.shape(testLabel))
         # endregion
     elif(datasetname=="Fashion-MNIST"):
         # region MNIST Fashion
