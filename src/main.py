@@ -1,9 +1,6 @@
-from google.colab import drive
-
-drive.mount('/content/gdrive')
-trainfilepath = '/content/gdrive/My Drive/Colab Notebooks/data/Fashion-MNIST'
-testfilepath = '/content/gdrive/My Drive/Colab Notebooks/data/Fashion-MNIST'
-outputDataPath = '/content/gdrive/My Drive/Colab Notebooks/output/'
+trainfilepath = '../data/Fashion-MNIST'
+testfilepath = '../data/Fashion-MNIST'
+outputDataPath = '../output/'
 
 import numpy as np
 import tensorflow as tf
@@ -344,7 +341,7 @@ if __name__ == '__main__':
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     with tf.Session(config=config) as sess:
-        saver.restore(sess, "/content/gdrive/My Drive/Colab Notebooks/SaveModel/model.ckpt")
+        saver.restore(sess, "../SaveModel/model.ckpt")
         test_f1micro = 0
         test_f1macro = 0
         test_accuracy, test_y_cls, test_y_tru = sess.run([accuracy, y_pred_cls, y_true_cls],
