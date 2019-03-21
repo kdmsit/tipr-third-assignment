@@ -173,15 +173,17 @@ if __name__ == '__main__':
             else:
                 layer_conv, weights_conv = new_conv_layer(input=layer_relu, num_input_channels=10, filter_size=configuration[i],num_filters=10, name="conv" + str(i))
             print(weights_conv)
-            layer_pool = new_pool_layer(layer_conv, name="pool"+str(i))
+
             if(str.lower(activation)=="relu"):
-                layer_relu = new_relu_layer(layer_pool, name="relu"+str(i))
+                layer_relu = new_relu_layer(layer_conv, name="relu"+str(i))
             elif(str.lower(activation)=="sigmoid"):
-                layer_relu = new_sigmoid_layer(layer_pool, name="sigmoid" + str(i))
+                layer_relu = new_sigmoid_layer(layer_conv, name="sigmoid" + str(i))
             elif (str.lower(activation) == "tanh"):
-                layer_relu = new_tanh_layer(layer_pool, name="tanh" + str(i))
+                layer_relu = new_tanh_layer(layer_conv, name="tanh" + str(i))
             elif (str.lower(activation) == "swish"):
-                layer_relu = new_tanh_layer(layer_pool, name="swish" + str(i))
+                layer_relu = new_tanh_layer(layer_conv, name="swish" + str(i))
+            layer_pool = new_pool_layer(layer_relu, name="pool" + str(i))
+            layer_norm=tf.layers.batch_normalization(layer_pool)
             if(i==len(configuration)-1):
                 # Flatten Layer
                 num_features = layer_relu.get_shape()[1:4].num_elements()
@@ -189,6 +191,7 @@ if __name__ == '__main__':
 
                 # Fully-Connected Layer 1
                 layer_fc1 = new_fc_layer(layer_flat, num_inputs=num_features, num_outputs=200, name="fc1")
+
 
                 # RelU layer 3
                 if (str.lower(activation) == "relu"):
