@@ -341,7 +341,71 @@ if __name__ == '__main__':
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     with tf.Session(config=config) as sess:
-        saver.restore(sess, "../SaveModel/model.ckpt")
+        #saver.restore(sess, "../SaveModel/model.ckpt")
+        sess.run(tf.global_variables_initializer())
+
+        # Add the model graph to TensorBoard
+        writer.add_graph(sess.graph)
+        validation = []
+        # Loop over number of epochs
+        for epoch in range(num_epochs):
+            start_time = time.time()
+            y_pred_label = []
+            train_accuracy = 0
+            train_f1micro = 0
+            train_f1macro = 0
+            batchstartIndex = 0
+            for batch in range(0, int(len(trainLabel) / batch_size)):
+                acc = 0
+                batchendIndex = batchstartIndex + batch_size
+                x_batch = trainData[batchstartIndex:batchendIndex]
+                y_true_batch = trainLabel[batchstartIndex:batchendIndex]
+                # print(y_true_batch)
+                batchstartIndex = batchendIndex
+                # Get a batch of images and labels
+                # x_batch, y_true_batch = data.train.next_batch(batch_size)
+
+                # Put the batch into a dict with the proper names for placeholder variables
+                feed_dict_train = {x: x_batch, y_true: y_true_batch}
+
+                # Run the optimizer using this batch of training data.
+                sess.run(optimizer, feed_dict=feed_dict_train)
+
+                # Calculate the accuracy on the batch of training data
+                # train_accuracy += sess.run(accuracy, feed_dict=feed_dict_train)
+                acc, y_cls, y_tru = sess.run([accuracy, y_pred_cls, y_true_cls], feed_dict=feed_dict_train)
+                train_f1micro += f1_score(y_tru, y_cls, average='micro')
+                train_f1macro += f1_score(y_tru, y_cls, average='macro')
+                # print(y_cls)
+                train_accuracy += acc
+                # y_pred_label.append(y_cls)
+
+                # Generate summary with the current batch of data and write to file
+                # summ = sess.run(merged_summary, feed_dict=feed_dict_train)
+                # writer.add_summary(summ, epoch * int(len(trainLabel) / batch_size) + batch)
+
+            train_accuracy /= int(len(trainLabel) / batch_size)
+            train_f1micro /= int(len(trainLabel) / batch_size)
+            train_f1macro /= int(len(trainLabel) / batch_size)
+
+            # fpr, tpr, tresholds = sk.metrics.roc_curve(y_true, y_pred_label)
+
+            end_time = time.time()
+
+            print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
+            f.write(
+                "Epoch " + str(epoch + 1) + " completed : Time usage " + str(int(end_time - start_time)) + " seconds")
+            f.write("\n")
+            print("\t- Training   Accuracy:\t{}".format(train_accuracy))
+            f.write("\t- Training   Accuracy:\t{}".format(train_accuracy))
+            f.write("\n")
+            print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+            f.write("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+            f.write("\n")
+            print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+            f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+            f.write("\n")
+            print("\n")
         test_f1micro = 0
         test_f1macro = 0
         test_accuracy, test_y_cls, test_y_tru = sess.run([accuracy, y_pred_cls, y_true_cls],
