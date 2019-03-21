@@ -406,6 +406,7 @@ if __name__ == '__main__':
             f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
             f.write("\n")
             print("\n")
+        saver.save(sess, "/content/gdrive/My Drive/Colab Notebooks/SaveModel/model.ckpt")
         test_f1micro = 0
         test_f1macro = 0
         test_accuracy, test_y_cls, test_y_tru = sess.run([accuracy, y_pred_cls, y_true_cls],
