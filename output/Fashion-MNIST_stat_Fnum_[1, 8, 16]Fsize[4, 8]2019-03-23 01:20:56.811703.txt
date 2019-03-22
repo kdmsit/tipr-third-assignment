@@ -1,4 +1,0 @@
-This is Convolutional Neural Network for DataSet Fashion-MNIST
-Configuration[4, 8]
-Activation Functionrelu
-Epochs :30, BatchSize :100

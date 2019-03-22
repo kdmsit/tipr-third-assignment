@@ -1,5 +1,0 @@
-This is Convolutional Neural Network for DataSet CIFAR-10
-Configuration[3, 5]
-ConvConfig[3, 32, 64]
-Activation Functionrelu
-Epochs :70, BatchSize :500
