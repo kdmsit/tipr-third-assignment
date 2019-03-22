@@ -254,15 +254,12 @@ if __name__ == '__main__':
         print(Message)
         f.write(Message)
         f.write("\n")
-        print(configuration)
         print("\n")
         f.write("Configuration" + str(configuration))
         f.write("\n")
-        print(ConvConfig)
         print("\n")
         f.write("ConvConfig" + str(ConvConfig))
         f.write("\n")
-        print(activation)
         print("\n")
         f.write("Activation Function" + str(activation))
         f.write("\n")
@@ -344,10 +341,10 @@ if __name__ == '__main__':
         # Merge all summaries together
         merged_summary = tf.summary.merge_all()
         if (datasetname == "Fashion-MNIST"):
-            num_epochs = 2
+            num_epochs = 30
             batch_size = 100
         elif (datasetname == "CIFAR-10"):
-            num_epochs =2
+            num_epochs =70
             batch_size = 500
         f.write("Epochs :" + str(num_epochs) + ", BatchSize :" + str(batch_size))
         f.write("\n")
