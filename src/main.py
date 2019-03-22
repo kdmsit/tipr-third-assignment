@@ -124,8 +124,6 @@ if __name__ == '__main__':
         for k in con:
             x.append(int(k))
         configuration = x
-        print(configuration)
-        print(len(configuration))
         activation = sys.argv[10]
 
     outputDataPath="../output/"
@@ -381,6 +379,7 @@ if __name__ == '__main__':
             validation = []
             # Loop over number of epochs
             for epoch in range(num_epochs):
+                print("epoc",epoc)
                 start_time = time.time()
                 y_pred_label = []
                 train_accuracy = 0
@@ -424,21 +423,22 @@ if __name__ == '__main__':
 
                 end_time = time.time()
 
-                print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(
-                    int(end_time - start_time)) + " seconds")
-                f.write("Epoch " + str(epoch + 1) + " completed : Time usage " + str(
-                    int(end_time - start_time)) + " seconds")
-                f.write("\n")
-                print("\t- Training   Accuracy:\t{}".format(train_accuracy))
-                f.write("\t- Training   Accuracy:\t{}".format(train_accuracy))
-                f.write("\n")
-                print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
-                f.write("\t- Training   F1_Micro:\t{}".format(train_f1micro))
-                f.write("\n")
-                print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
-                f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
-                f.write("\n")
-                print("\n")
+                if(mode==1):
+                    print("Epoch " + str(epoch + 1) + " completed : Time usage " + str(
+                        int(end_time - start_time)) + " seconds")
+                    f.write("Epoch " + str(epoch + 1) + " completed : Time usage " + str(
+                        int(end_time - start_time)) + " seconds")
+                    f.write("\n")
+                    print("\t- Training   Accuracy:\t{}".format(train_accuracy))
+                    f.write("\t- Training   Accuracy:\t{}".format(train_accuracy))
+                    f.write("\n")
+                    print("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+                    f.write("\t- Training   F1_Micro:\t{}".format(train_f1micro))
+                    f.write("\n")
+                    print("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+                    f.write("\t- Training   F1_Macro:\t{}".format(train_f1macro))
+                    f.write("\n")
+                    print("\n")
             test_f1micro = 0
             test_f1macro = 0
             test_accuracy, test_y_cls, test_y_tru = sess.run([accuracy, y_pred_cls, y_true_cls],
