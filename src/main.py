@@ -379,7 +379,7 @@ if __name__ == '__main__':
             validation = []
             # Loop over number of epochs
             for epoch in range(num_epochs):
-                print("epoc",epoc)
+                print("epoc",epoch)
                 start_time = time.time()
                 y_pred_label = []
                 train_accuracy = 0
