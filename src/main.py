@@ -106,6 +106,12 @@ if __name__ == '__main__':
     if (mode == 0):
         testfilepath = sys.argv[2]
         datasetname = sys.argv[4]
+        activation ="relu"
+        configuration = [3, 5]
+        if (datasetname == "CIFAR-10"):
+            trainfilepath="../data/CIFAR-10"
+        elif(datasetname == "Fashion-MNIST"):
+            trainfilepath = "../data/Fashion-MNIST"
     elif (mode == 1):
         configuration = []
         trainfilepath = sys.argv[2]
@@ -121,7 +127,7 @@ if __name__ == '__main__':
         print(configuration)
         print(len(configuration))
         activation = sys.argv[10]
-    configuration = [3, 5]
+
     outputDataPath="../output/"
     # print(testfilepath)
     # print(datasetname)
@@ -198,8 +204,8 @@ if __name__ == '__main__':
         # endregion
 
         # region Test Data
-        test_labels_path = os.path.join(trainfilepath, 't10k-labels-idx1-ubyte.gz')
-        Test_images_path = os.path.join(trainfilepath, 't10k-images-idx3-ubyte.gz')
+        test_labels_path = os.path.join(testfilepath, 't10k-labels-idx1-ubyte.gz')
+        Test_images_path = os.path.join(testfilepath, 't10k-images-idx3-ubyte.gz')
         with gzip.open(test_labels_path, 'rb') as lbpath:
             labels_test = np.frombuffer(lbpath.read(), dtype=np.uint8, offset=8)
         with gzip.open(Test_images_path, 'rb') as imgpath:
