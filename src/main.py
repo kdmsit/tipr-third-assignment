@@ -269,22 +269,6 @@ if __name__ == '__main__':
 
         y_true_cls = tf.argmax(y_true, dimension=1)
 
-        outputFileName = datasetname + "_stat_Fnum_" + str(ConvConfig) + "Fsize" + str(configuration) + str(
-            datetime.datetime.now()) + ".txt"
-        f = open(outputDataPath + outputFileName, "w")
-        Message = "This is Convolutional Neural Network for DataSet " + str(datasetname)
-        print(Message)
-        f.write(Message)
-        f.write("\n")
-        print(configuration)
-        print("\n")
-        f.write("Configuration" + str(configuration))
-        f.write("\n")
-        print(activation)
-        print("\n")
-        f.write("Activation Function" + str(activation))
-        f.write("\n")
-
         for i in range(len(configuration)):
             if (i == 0):
                 layer_conv = new_conv_layer(input=x_image, num_input_channels=ConvConfig[i],
@@ -360,10 +344,10 @@ if __name__ == '__main__':
         # Merge all summaries together
         merged_summary = tf.summary.merge_all()
         if (datasetname == "Fashion-MNIST"):
-            num_epochs = 30
+            num_epochs = 2
             batch_size = 100
         elif (datasetname == "CIFAR-10"):
-            num_epochs = 80
+            num_epochs =2
             batch_size = 500
         f.write("Epochs :" + str(num_epochs) + ", BatchSize :" + str(batch_size))
         f.write("\n")
@@ -379,7 +363,6 @@ if __name__ == '__main__':
             validation = []
             # Loop over number of epochs
             for epoch in range(num_epochs):
-                print("epoc",epoch)
                 start_time = time.time()
                 y_pred_label = []
                 train_accuracy = 0
