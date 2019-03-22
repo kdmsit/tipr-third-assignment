@@ -1,0 +1,8 @@
+This is Convolutional Neural Network for DataSet Fashion-MNIST
+Configuration[3, 5]
+ConvConfig[1, 8, 16]
+Activation Functionrelu
+Epochs :2, BatchSize :100
+	- Test Accuracy:	0.8447999954223633
+	- Test F1_Micro:	0.8447999999999999
+	- Test F1_Macro:	0.8432182439762883

@@ -1,0 +1,8 @@
+This is Convolutional Neural Network for DataSet Fashion-MNIST
+Configuration[4, 8]
+Activation Functionrelu
+Epochs :30, BatchSize :100
+Epoch 1 completed : Time usage 33 seconds
+	- Training   Accuracy:	0.7546833323811492
+	- Training   F1_Micro:	0.7546833333333335
+	- Training   F1_Macro:	0.7437655760962046

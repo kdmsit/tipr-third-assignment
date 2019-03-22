@@ -1,0 +1,12 @@
+This is Convolutional Neural Network for DataSet CIFAR-10
+Configuration[3, 5]
+Activation Functionrelu
+Epochs :80, BatchSize :500
+Epoch 1 completed : Time usage 88 seconds
+	- Training   Accuracy:	0.34987999968230726
+	- Training   F1_Micro:	0.3498800000000001
+	- Training   F1_Macro:	0.3311724980086304
+Epoch 2 completed : Time usage 88 seconds
+	- Training   Accuracy:	0.48553999871015546
+	- Training   F1_Micro:	0.48553999999999986
+	- Training   F1_Macro:	0.47461429933688265
