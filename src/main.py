@@ -122,8 +122,12 @@ if __name__ == '__main__':
         print(len(configuration))
         activation = sys.argv[10]
     configuration = [3, 5]
-    activation = "relu"
-    datasetname = "Fashion-MNIST"
+    outputDataPath="../output/"
+    # print(testfilepath)
+    # print(datasetname)
+    # print(configuration)
+    # print(activation)
+    # print(testfilepath)
     if (datasetname == "CIFAR-10"):
         # region CIFAR-10
         # region Train Data
